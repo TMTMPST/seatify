@@ -31,10 +31,10 @@
                     <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium">Masuk</button>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium">Daftar</button>
                 </form>
 
-                <p class="mt-4 text-center text-sm font-medium">Belum Punya Akun? <a href="/register" class="text-blue-700 font-medium">Daftar</a></p>
+                <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-blue-700 font-medium">Masuk</a></p>
             </div>
         </div>
         <div class="bg-blue-600 text-white flex flex-col justify-center p-8">
