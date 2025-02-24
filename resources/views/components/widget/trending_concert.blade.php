@@ -1,5 +1,4 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Konser Slank -->
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://cloud.jpnn.com/photo/arsip/normal/2022/09/23/slank-dalam-pestapora-2022-di-gambir-expo-kemayoran-jakarta-er5k.jpg" alt="Konser Slank di Indonesia" />
@@ -17,8 +16,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Konser Dewa 19 -->
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://www.mnctrijaya.com/uploads/news/Dewa%2001.png" alt="Konser Dewa 19 di Indonesia" />
@@ -36,8 +33,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Konser Noah -->
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn.antaranews.com/cache/1200x800/2023/05/09/SAVE_20230509_190133.jpg" alt="Konser Noah di Indonesia" />
@@ -55,8 +50,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Konser Superman Is Dead -->
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://media.suara.com/pictures/970x544/2019/03/30/59425-superman-is-dead-saat-menjadi-konser-pembuka-iwan-fals-di-ancol-jakarta-utara-sabtu-3032019.jpg" alt="Konser Superman Is Dead di Indonesia" />
@@ -74,8 +67,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Konser Burgerkill -->
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://mcc.or.id/wp-content/uploads/2024/07/n91-2.png" alt="Konser Burgerkill di Indonesia" />
