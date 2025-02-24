@@ -35,7 +35,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Dewa 19 2025</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Rasakan nostalgia dengan penampilan epik Dewa 19 yang akan mengguncang panggung dengan lagu-lagu legendaris!</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-300 rounded-lg hover:bg-gray-400">
                 Lihat Konser
                 <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
@@ -57,7 +57,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Noah di Indonesia 2024</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Saksikan penampilan Noah yang memukau dengan aransemen baru dan suasana konser yang luar biasa!</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-300 rounded-lg hover:bg-gray-400">
                 Lihat Konser
                 <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
@@ -79,7 +79,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Superman Is Dead di Indonesia 2024</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Rasakan vibe punk rock khas Superman Is Dead yang siap membakar semangat para penggemar!</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-300 rounded-lg hover:bg-gray-400">
                 Lihat Konser
                 <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
@@ -101,7 +101,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Burgerkill di Indonesia 2024</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Siap headbanging? Burgerkill akan membawa suasana panggung menjadi lebih liar</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-300 rounded-lg hover:bg-gray-400">
                 Lihat Konser
                 <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
