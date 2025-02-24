@@ -1,0 +1,37 @@
+[
+    {
+        "band": "Metallica",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Metallica_at_Orion_Music_and_More_Festival_2012.jpg",
+        "title": "Metallica World Tour 2024",
+        "description": "Nikmati penampilan epik Metallica dalam tur dunia 2024 dengan lagu-lagu legendaris mereka.",
+        "link": "#"
+    },
+    {
+        "band": "AC/DC",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/ACDC_In_Tacoma_2009.jpg",
+        "title": "AC/DC Power Up Tour 2024",
+        "description": "AC/DC kembali dengan tur Power Up, menampilkan hits klasik dan album terbaru mereka.",
+        "link": "#"
+    },
+    {
+        "band": "Guns N' Roses",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Guns_N%27_Roses_Not_In_This_Lifetime_Tour_2017.jpg",
+        "title": "Guns N' Roses Live in Jakarta",
+        "description": "Rasakan sensasi rock n' roll dengan Guns N' Roses yang akan tampil di Jakarta!",
+        "link": "#"
+    },
+    {
+        "band": "Linkin Park",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Linkin_Park_-_Rock_im_Park_2014_-_by_2eight_3SC0327.jpg",
+        "title": "Linkin Park Reunion Tour 2024",
+        "description": "Tur reuni yang paling ditunggu! Linkin Park siap menggebrak panggung dengan lagu-lagu ikonik mereka.",
+        "link": "#"
+    },
+    {
+        "band": "Queen",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Queen_1977.jpg",
+        "title": "Queen + Adam Lambert Tour 2024",
+        "description": "Queen bersama Adam Lambert akan menghidupkan kembali kejayaan musik rock dalam tur spektakuler ini.",
+        "link": "#"
+    }
+]

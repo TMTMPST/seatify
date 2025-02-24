@@ -10,17 +10,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
             </svg>
         </button>
-        {{-- <div class="flex flex-wrap justify-left gap-1">
-            <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-300 cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out">
-                🎸 Rock
-            </button>
-            <button type="button" class="text-white bg-transparent border-2 border-white focus:outline-none hover:bg-white hover:border-white hover:text-gray-900 cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out">
-                🎙️ Pop
-            </button>
-            <button type="button" class="text-white bg-transparent border-2 border-white focus:outline-none hover:bg-white hover:border-white hover:text-gray-900 cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out">
-                🎶 Jazz
-            </button>
-        </div>               --}}
     </div>
 </section>
+@include('components.ui.header')
 @endsection
