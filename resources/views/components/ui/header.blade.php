@@ -1,6 +1,6 @@
 @extends('layouts.component')
 @section('component')
-<section class="bg-white">
+<section class="bg-white rounded-t-xl">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16">
         <h1 class="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray md:text-5xl lg:text-4xl">Trending Konser</h1>
         <div class="flex flex-wrap justify-left gap-1 mb-8">
@@ -15,6 +15,8 @@
             </button>
         </div>     
         @include('components.widget.rock_concert')         
+        @include('components.widget.pop_concert')         
+        @include('components.widget.jazz_concert')         
     </div>
 </section>
 @endsection
