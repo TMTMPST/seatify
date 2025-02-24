@@ -4,6 +4,11 @@
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://cloud.jpnn.com/photo/arsip/normal/2022/09/23/slank-dalam-pestapora-2022-di-gambir-expo-kemayoran-jakarta-er5k.jpg" alt="Konser Slank di Indonesia" />
         </a>
         <div class="p-5">
+            <ul class="max-w-md text-green-700 list-disc list-inside font-medium">
+                <li>
+                    Tersedia
+                </li>
+            </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Slank di Indonesia 2024</h5>
             </a>
@@ -21,6 +26,11 @@
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://www.mnctrijaya.com/uploads/news/Dewa%2001.png" alt="Konser Dewa 19 di Indonesia" />
         </a>
         <div class="p-5">
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>
+                    Tidak Tersedia
+                </li>
+            </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Dewa 19 2025</h5>
             </a>
@@ -38,6 +48,11 @@
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn.antaranews.com/cache/1200x800/2023/05/09/SAVE_20230509_190133.jpg" alt="Konser Noah di Indonesia" />
         </a>
         <div class="p-5">
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>
+                    Tidak Tersedia
+                </li>
+            </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Noah di Indonesia 2024</h5>
             </a>
@@ -55,6 +70,11 @@
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://media.suara.com/pictures/970x544/2019/03/30/59425-superman-is-dead-saat-menjadi-konser-pembuka-iwan-fals-di-ancol-jakarta-utara-sabtu-3032019.jpg" alt="Konser Superman Is Dead di Indonesia" />
         </a>
         <div class="p-5">
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>
+                    Tidak Tersedia
+                </li>
+            </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Superman Is Dead di Indonesia 2024</h5>
             </a>
@@ -72,6 +92,11 @@
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://mcc.or.id/wp-content/uploads/2024/07/n91-2.png" alt="Konser Burgerkill di Indonesia" />
         </a>
         <div class="p-5">
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>
+                    Tidak Tersedia
+                </li>
+            </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Burgerkill di Indonesia 2024</h5>
             </a>

@@ -14,7 +14,7 @@
                 🎶 Jazz
             </button>
         </div>     
-        @include('components.widget.trending_concert')         
+        @include('components.widget.rock_concert')         
     </div>
 </section>
 @endsection
