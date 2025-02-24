@@ -16,3 +16,9 @@ Route::get('/register', function(){
 Route::get('/detail-konser', function(){
     return view('detail_concert');
 });
+
+// Admin 
+
+Route::get('/admin', action: function(){
+    return view('admin.index');
+});
