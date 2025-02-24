@@ -13,7 +13,7 @@
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Slank di Indonesia 2024</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">Jangan lewatkan penampilan energik Slank dengan lagu-lagu hits yang akan menggetarkan panggung!</p>
-            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
+            <a href="/detail-konser" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300">
                 Lihat Konser
                 <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
