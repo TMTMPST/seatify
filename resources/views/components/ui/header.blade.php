@@ -62,6 +62,5 @@
             });
         });
     });
-    </script>
-    
+</script>    
 @endsection

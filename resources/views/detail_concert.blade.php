@@ -13,13 +13,13 @@
             </button>
         </div>       
         <div class="flex flex-wrap justify-left gap-1 mb-8">
-            <button type="button" class="= text-white bg-blue-800 border-2 border-blue-800 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-md px-8 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" data-genre="rock">
-                Bio Artis
+            <button type="button" class="toggle-btn text-white bg-blue-800 border-2 border-blue-800 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" data-section="biodata">
+                📝 Bio Artis
             </button>
-            <button type="button" class="= text-gray bg-gray-100 border-2 border-gray-200 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-md px-8 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" data-genre="pop">
-                Tiket
+            <button type="button" class="toggle-btn text-gray bg-gray-100 border-2 border-gray-200 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" data-section="tiket">
+                🎫 Tiket
             </button>
-        </div> 
+        </div>
         <hr class="h-px my-8 border-1 border-gray-100 mb-8 border-dashed">
         <div class="flex flex-col mb-8">
             <h1 class="text-lg font-bold tracking-tight leading-none text-white md:text-xl lg:text-2xl mb-4">
@@ -56,6 +56,49 @@
             </div>
         </div>
     </div>
-</section>
-@include('components.ui.tiket_konser')
+    <div id="biodata" class="toggle-section block">
+        @include('components.ui.biodata_artis')
+    </div>
+    <div id="tiket" class="toggle-section hidden">
+        @include('components.ui.tiket_konser')
+    </div>
+</section> 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.toggle-btn');
+        const sections = document.querySelectorAll('.toggle-section');
+
+        function showSection(sectionId) {
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+
+            buttons.forEach(btn => {
+                if (btn.dataset.section === sectionId) {
+                    btn.classList.add('bg-blue-800', 'text-white');
+                    btn.classList.remove('bg-gray-100', 'text-gray-500');
+                } else {
+                    btn.classList.add('bg-gray-100', 'text-gray-500');
+                    btn.classList.remove('bg-blue-800', 'text-white');
+                }
+            });
+        }
+
+        // Set default ke biodata
+        showSection('biodata');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const sectionId = this.dataset.section;
+                showSection(sectionId);
+            });
+        });
+    });
+</script>
 @endsection
