@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <section class="">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:pt-16">
         <div class="flex flex-row justify-between items-center mb-8">
             <h1 class="text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                 Konser Slank
@@ -20,8 +20,8 @@
                 Tiket
             </button>
         </div> 
-        <hr class="h-px my-8 bg-gray-50 border-0 mb-8">
-        <div class="flex flex-col">
+        <hr class="h-px my-8 border-1 border-gray-100 mb-8 border-dashed">
+        <div class="flex flex-col mb-8">
             <h1 class="text-lg font-bold tracking-tight leading-none text-white md:text-xl lg:text-2xl mb-4">
                 Lokasi Konser
             </h1>
@@ -57,4 +57,5 @@
         </div>
     </div>
 </section>
+@include('components.ui.tiket_konser')
 @endsection
