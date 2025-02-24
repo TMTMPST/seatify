@@ -1,12 +1,12 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://akcdn.detik.net.id/community/media/visual/2023/06/14/tiara-andini_169.jpeg?w=700&q=90" alt="Konser Tiara Andini di Indonesia" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://img.antarafoto.com/cache/1200x816/2023/03/12/penampilan-tiara-andini-di-konser-borneoland-fest-14m7r-dom.webp" alt="Konser Tiara Andini di Indonesia" />
         </a>
         <div class="p-5">
-            <ul class="max-w-md text-green-700 list-disc list-inside font-medium">
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
                 <li>
-                    Tersedia
+                    Tidak Tersedia
                 </li>
             </ul>
             <a href="#">
@@ -23,7 +23,7 @@
     </div>
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn1.katadata.co.id/media/images/thumb/2023/02/27/indonesia_voive-2023_6-2023_02_27-21_06_59_7057f5827be64e13f79c6d470e004a80_960x640_thumb.jpg" alt="Konser Rizky Febian di Indonesia" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://i.scdn.co/image/0bb46f3603da6b13d29f8b5f2272b6b688c39aed" alt="Konser Rizky Febian di Indonesia" />
         </a>
         <div class="p-5">
             <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
@@ -45,7 +45,7 @@
     </div>
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn.idntimes.com/content-images/community/2022/03/d-7b1296b3f73cbdd28f84b13e3b244777.jpg" alt="Konser Mahalini di Indonesia" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://a.okezone.com/photos/2023/10/16//94367/433254_highres.jpg" alt="Konser Mahalini di Indonesia" />
         </a>
         <div class="p-5">
             <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
@@ -67,7 +67,7 @@
     </div>
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn1.katadata.co.id/media/images/thumb/2023/05/29/Arsy_Widianto_2023_05_29-09_42_33_b74ac6eeae2e83038bfb177fc7d6783d_960x640_thumb.jpg" alt="Konser Arsy Widianto di Indonesia" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://i.ytimg.com/vi/PQf-Ep_Plgc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDGYKNg__SOXXUY6OUbU4DizGETqg" alt="Konser Arsy Widianto di Indonesia" />
         </a>
         <div class="p-5">
             <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
@@ -89,7 +89,7 @@
     </div>
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn0-production-images-kly.akamaized.net/SSUojMfxK7oUOWlE2keABkPjY_A=/0x0:870x580/640x426/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3847324/original/047024300_1656388433-WhatsApp_Image_2022-06-27_at_4.31.58_PM.jpeg" alt="Konser Lyodra di Indonesia" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://mmc.tirto.id/image/2020/03/03/antarafoto-indonesian-idol-030220-hma-4_ratio-16x9.jpg" alt="Konser Lyodra di Indonesia" />
         </a>
         <div class="p-5">
             <ul class="max-w-md text-red-700 list-disc list-inside font-medium">

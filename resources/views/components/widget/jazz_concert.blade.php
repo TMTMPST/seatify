@@ -1,11 +1,11 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://cdn0-production-images-kly.akamaized.net/UHyVJDm5fZydEuAeJ2J9lDdy4Q4=/0x0:1000x667/640x426/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4121636/original/024107100_1657798466-Indonesian_Jazz_Festival_2022.jpg" alt="Konser Maliq & D'Essentials" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://eventguide.id/wp-content/uploads/2023/05/maliq2.jpeg" alt="Konser Maliq & D'Essentials" />
         </a>
         <div class="p-5">
-            <ul class="max-w-md text-green-700 list-disc list-inside font-medium">
-                <li>Tersedia</li>
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>Tidak Tersedia</li>
             </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Maliq & D'Essentials 2024</h5>
@@ -22,7 +22,7 @@
 
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://www.whiteboardjournal.com/wp-content/uploads/2020/02/whiteboardjournal-ben.jpg" alt="Konser Benny Likumahuwa Jazz Connection" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://mmc.tirto.id/image/otf/640x0/2020/06/09/benny-likumahuwa_ratio-16x9.jpg" alt="Konser Benny Likumahuwa Jazz Connection" />
         </a>
         <div class="p-5">
             <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
@@ -43,11 +43,11 @@
 
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
-            <img class="h-48 w-full object-cover rounded-t-xl" src="https://www.jazzuality.com/wp-content/uploads/2014/02/Tulus-1-600x400.jpg" alt="Konser Tulus Jazz Night" />
+            <img class="h-48 w-full object-cover rounded-t-xl" src="https://t-2.tstatic.net/wartakota/foto/bank/images/tulus-koj.jpg" alt="Konser Tulus Jazz Night" />
         </a>
         <div class="p-5">
-            <ul class="max-w-md text-green-700 list-disc list-inside font-medium">
-                <li>Tersedia</li>
+            <ul class="max-w-md text-red-700 list-disc list-inside font-medium">
+                <li>Tidak Tersedia</li>
             </ul>
             <a href="#">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Konser Tulus Jazz Night 2024</h5>
