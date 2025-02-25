@@ -1,10 +1,10 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.auth')
+@section('auth')
 <div class="h-screen w-screen flex items-center justify-center">
     <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full bg-white">
         <div class="flex items-center justify-center bg-white text-gray-900 p-8">
             <div class="max-w-md w-full">
-                <h2 class="text-3xl font-bold mb-6">Selamat Datang 🤩</h2>
+                <h2 class="text-3xl font-bold mb-6">Hallo Fellas 😎</h2>
 
                 <div class="flex gap-4 mb-6">
                     <button class="flex items-center justify-center w-full py-3 px-4 font-medium hover:bg-gray-200 cursor-pointer bg-gray-100 text-gray-700 rounded-xl">
@@ -31,13 +31,13 @@
                     <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium">Daftar</button>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">Daftar</button>
                 </form>
 
                 <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-blue-700 font-medium">Masuk</a></p>
             </div>
         </div>
-        <div class="bg-blue-600 text-white flex flex-col justify-center p-8">
+        <div class="bg-blue-900 text-white flex flex-col justify-center p-8">
             <h1 class="text-4xl font-bold underline decoration-wavy">Nikmati Konser Impian Anda!</h1>
             <p class="mt-4 text-lg font-medium">Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. Jangan lewatkan momen tak terlupakan!</p>
             <div class="flex items-center mt-6 gap-2">

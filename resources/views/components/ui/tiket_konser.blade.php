@@ -1,6 +1,7 @@
 <section class="bg-white rounded-t-xl">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16 space-y-5">
         <div class="flex flex-col justify-between">
+            <!-- Card Event -->
             <div class="inline-flex items-center rounded-t-xl bg-blue-200 px-4 py-2 text-md gap-1 font-medium text-blue-700 justify-between">
                 <div class="flex gap-1">
                     <svg class="w-6 h-6 text-blue-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -12,7 +13,9 @@
                     Berakhir 1 Mar 2025 | 23.59
                 </div>
             </div>
-            <div class="flex items-center justify-between rounded-b-xl bg-white p-4 border-2 border-gray-100 hover:border-blue-700 cursor-pointer transition-all duration-300 ease-in-out">
+        
+            <!-- Card Body -->
+            <div id="eventCard" class="flex items-center justify-between rounded-b-xl bg-white p-4 border-2 border-gray-100 hover:border-blue-700 cursor-pointer transition-all duration-300 ease-in-out">
                 <div class="flex items-start space-x-4">
                     <div class="text-left pr-2 flex flex-col justify-between h-full">
                         <p class="text-xl font-bold text-gray-800">Mar 2</p>
@@ -22,9 +25,7 @@
                     <div class="border-l border-gray-300 pl-5 border-dashed">
                         <h3 class="text-xl font-bold text-gray-900">Slank</h3>
                         <p class="text-sm text-gray-600">Malang Creative Center</p>
-                        <p class="text-sm text-gray-500 flex flex-row">
-                            Malang, Indonesia
-                        </p>
+                        <p class="text-sm text-gray-500 flex flex-row">Malang, Indonesia</p>
                         <div class="mt-2">
                             <p class="text-sm text-gray-700">💰 Mulai dari <strong>Rp 200.000</strong></p>
                             <p class="text-sm text-gray-700">🚪 Pintu dibuka: 7:00 PM</p>
@@ -32,8 +33,8 @@
                         </div>
                     </div>
                 </div>
-            </div>         
-        </div>
+            </div>
+        </div>        
         <div class="flex items-center justify-between rounded-xl bg-gray-200 p-4 border-2 border-gray-200">
             <div class="flex items-start space-x-4">
                 <div class="text-left pr-2 flex flex-col justify-between h-full">

@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.auth')
+@section('auth')
 <div class="h-screen w-screen flex items-center justify-center">
     <div class="grid grid-cols-1 md:grid-cols-2 h-full w-full bg-white">
         <div class="flex items-center justify-center bg-white text-gray-900 p-8">
@@ -31,13 +31,13 @@
                     <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium">Masuk</button>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">Masuk</button>
                 </form>
 
                 <p class="mt-4 text-center text-sm font-medium">Belum Punya Akun? <a href="/register" class="text-blue-700 font-medium">Daftar</a></p>
             </div>
         </div>
-        <div class="bg-blue-600 text-white flex flex-col justify-center p-8">
+        <div class="bg-blue-900 text-white flex flex-col justify-center p-8">
             <h1 class="text-4xl font-bold underline decoration-wavy">Nikmati Konser Impian Anda!</h1>
             <p class="mt-4 text-lg font-medium">Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. Jangan lewatkan momen tak terlupakan!</p>
             <div class="flex items-center mt-6 gap-2">
