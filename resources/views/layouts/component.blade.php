@@ -11,7 +11,10 @@
 </head>
 <body>
     <div class="">
-        @yield('component')
+        @yield('header')
+    </div>
+    <div class="">
+        @yield('why_us')
     </div>
     <script src="{{ asset('js/genreWidget.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>

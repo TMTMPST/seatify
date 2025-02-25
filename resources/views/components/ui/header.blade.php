@@ -1,5 +1,5 @@
 @extends('layouts.component')
-@section('component')
+@section('header')
 <section class="bg-white rounded-t-xl">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16">
         <h1 class="mb-8 text-4xl font-extrabold tracking-tight leading-none text-gray md:text-5xl lg:text-4xl">
@@ -21,5 +21,6 @@
         @endforeach
     </div>
     @include('components.widget.banner')
+    <x-benefit />
 </section>
 @endsection
