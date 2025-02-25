@@ -56,11 +56,13 @@
             </div>
         </div>
     </div>
-    <div id="biodata" class="toggle-section block">
-        @include('components.ui.biodata_artis')
+    <div id="biodata" class="toggle-section">
+        @component('components.ui.biodata_artis')
+        @endcomponent
     </div>
     <div id="tiket" class="toggle-section hidden">
-        @include('components.ui.tiket_konser')
+        @component('components.ui.tiket_konser')
+        @endcomponent
     </div>
 </section> 
 
