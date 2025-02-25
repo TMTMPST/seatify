@@ -17,6 +17,10 @@ Route::get('/detail-konser', function(){
     return view('detail_concert');
 });
 
+Route::get('/pilih-kursi', function(){
+    return view('seat_concert');
+});
+
 // Admin 
 
 Route::get('/admin', action: function(){
