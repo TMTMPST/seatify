@@ -26,3 +26,8 @@ Route::get('/pilih-kursi', function(){
 Route::get('/admin', action: function(){
     return view('admin.index');
 });
+
+Route::view('/', 'dashboard')->name('dashboard');
+Route::view('/kanban', 'kanban')->name('kanban');
+Route::view('/inbox', 'inbox')->name('inbox');
+Route::view('/users', 'users')->name('users');

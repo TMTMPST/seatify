@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('components.header')
-    @include('components.sidebar')
+    <x-sidebar />
     <div class="p-4 sm:ml-64">
         <div class="p-4">
             <div class="mt-10">
