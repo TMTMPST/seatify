@@ -15,15 +15,15 @@
             <div class="flex items-center justify-between rounded-b-xl bg-white p-4 border-2 border-gray-100 hover:border-blue-700 cursor-pointer transition-all duration-300 ease-in-out">
                 <div class="flex items-start space-x-4">
                     <div class="text-left pr-2 flex flex-col justify-between h-full">
-                        <p class="text-xl font-bold text-gray-800">MAY 25</p>
-                        <p class="text-xl text-gray-500">SUN</p>
-                        <p class="text-xl font-medium text-gray-700">9:00 PM</p>
+                        <p class="text-xl font-bold text-gray-800">Mar 2</p>
+                        <p class="text-xl text-gray-500">SENIN</p>
+                        <p class="text-xl font-medium text-gray-700">21.00</p>
                     </div>
                     <div class="border-l border-gray-300 pl-5 border-dashed">
                         <h3 class="text-xl font-bold text-gray-900">Slank</h3>
-                        <p class="text-sm text-gray-600">Stadion Utama Gelora Bung Karno</p>
+                        <p class="text-sm text-gray-600">Malang Creative Center</p>
                         <p class="text-sm text-gray-500 flex flex-row">
-                            Jakarta, Indonesia
+                            Malang, Indonesia
                         </p>
                         <div class="mt-2">
                             <p class="text-sm text-gray-700">💰 Mulai dari <strong>Rp 200.000</strong></p>
