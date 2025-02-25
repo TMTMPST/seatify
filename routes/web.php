@@ -23,11 +23,15 @@ Route::get('/pilih-kursi', function(){
 
 // Admin 
 
-Route::get('/admin', action: function(){
+Route::get('/admin', action: function () {
     return view('admin.index');
 });
-
-Route::view('/', 'dashboard')->name('dashboard');
-Route::view('/kanban', 'kanban')->name('kanban');
-Route::view('/inbox', 'inbox')->name('inbox');
-Route::view('/users', 'users')->name('users');
+Route::get('/kanban', action: function () {
+    return view('kanban');
+});
+Route::get('/inbox', action: function () {
+    return view('inbox');
+});
+Route::get('/users', action: function () {
+    return view('users');
+});
