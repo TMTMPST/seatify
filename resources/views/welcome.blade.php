@@ -13,4 +13,5 @@
     </div>
 </section>
 @include('components.ui.header')
+@include('components.ui.testimoni') 
 @endsection
