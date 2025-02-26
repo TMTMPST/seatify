@@ -14,4 +14,5 @@
 </section>
 @include('components.ui.header')
 @include('components.ui.testimoni') 
+@include('components.widget.faq')
 @endsection
