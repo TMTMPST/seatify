@@ -1,7 +1,7 @@
 <section class="bg-white">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16">
         <h1 class="mb-3 text-4xl lg:text-5xl md:text-3xl font-bold tracking-tight leading-none text-gray-900">Mau tiket resmi langsung di tangan?</h1>
-        <p class="text-xl font-medium tracking-tight leading-none text-gray-400 md:text-3xl lg:text-2xl">Nonton konser idola jadi lebih gampang dengan Seatify. Dapatkan tiket terbaik dan nikmati juga berbagai benefit menarik lainnya!</p>
+        <p class="text-xl font-medium tracking-tight leading-none text-gray-400">Nonton konser idola jadi lebih gampang dengan Seatify. Dapatkan tiket terbaik dan nikmati juga berbagai benefit menarik lainnya!</p>
         <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 md:grid-cols-2 lg:gap-8 gap-2">
             @foreach ($benefits as $benefit)
                 <div class="w-full lg:p-6 p-3 bg-white border-2 hover:border-blue-800 hover:border-2 cursor-pointer border-gray-100 rounded-xl rotate-0 hover:rotate-12 flex flex-col items-center transition-all duration-300 ease-in-out">
