@@ -13,6 +13,7 @@
     </div>
 </section>
 @include('components.ui.header')
+@include('components.widget.promo')
 @include('components.ui.testimoni') 
 @include('components.widget.faq')
 @endsection
