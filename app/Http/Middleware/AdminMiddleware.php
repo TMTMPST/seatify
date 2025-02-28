@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Response;  // Add this line
 use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
@@ -14,6 +14,8 @@ class AdminMiddleware
         if (Auth::check() && Auth::user()->level == 0) {
             return $next($request);
         }
-        return redirect('/');
+
+        return redirect('/')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
     }
 }
+

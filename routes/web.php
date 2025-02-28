@@ -31,7 +31,7 @@ Route::get('/detail-konser', function(){
 
 Route::get('/admin', function () {
     return view('admin.index');
-})->middleware('admin');
+});
 
 Route::get('/kanban', action: function () {
     return view('kanban');
