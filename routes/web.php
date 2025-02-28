@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/konser', function () {
+    return view('konser');
+});
+
 Route::get('/login', function(){
     return view('auth.login');
 });
@@ -15,10 +19,6 @@ Route::get('/register', function(){
 
 Route::get('/detail-konser', function(){
     return view('detail_concert');
-});
-
-Route::get('/pilih-kursi', function(){
-    return view('seat_concert');
 });
 
 // Admin 
