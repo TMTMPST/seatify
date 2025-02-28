@@ -9,16 +9,19 @@
     <title>Seatify</title>
 </head>
 <body>
-    @include('components.header')
-    <x-sidebar />
-    <div class="p-4 sm:ml-64">
-        <div class="p-4">
-            <div class="mt-10">
-                @yield('admin')
+    @if(auth()->check() && auth()->user()->level == 0)
+        @include('components.header')
+        <x-sidebar />
+        <div class="p-4 sm:ml-64">
+            <div class="p-4">
+                <div class="mt-10">
+                    @yield('admin')
+                </div>
             </div>
         </div>
-    </div>
-
+    @else
+        <script>window.location.href = "/";</script>
+    @endif
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>

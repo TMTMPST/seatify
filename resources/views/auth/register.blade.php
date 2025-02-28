@@ -21,16 +21,7 @@
                     <div>
                         <label for="password" class="block text-sm font-medium">Kata Sandi</label>
                         <input type="password" id="password" name="password" class="w-full mt-1 p-2 bg-gray-50 border border-gray-200 rounded-lg" placeholder="******" required />
-                    </div>
-                
-                    <div class="flex items-center justify-between">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600 rounded-sm" />
-                            <span class="ml-2 text-sm">Ingat aku</span>
-                        </label>
-                        <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
-                    </div>
-                
+                    </div>                
                     <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">Daftar</button>
                 </form>                
                 <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-blue-700 font-medium">Masuk</a></p>

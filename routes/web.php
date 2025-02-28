@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,6 +15,9 @@ Route::get('/konser', function () {
 Route::get('/login', function(){
     return view('auth.login');
 });
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::get('/register', function(){
     return view('auth.register');
 });
@@ -25,9 +29,10 @@ Route::get('/detail-konser', function(){
 
 // Admin 
 
-Route::get('/admin', action: function () {
+Route::get('/admin', function () {
     return view('admin.index');
-});
+})->middleware('admin');
+
 Route::get('/kanban', action: function () {
     return view('kanban');
 });
