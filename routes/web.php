@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -15,6 +16,7 @@ Route::get('/konser', function () {
 Route::get('/login', function(){
     return view('auth.login');
 });
+
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -30,8 +32,17 @@ Route::get('/detail-konser', function(){
 // Admin 
 
 Route::get('/admin', function () {
+    if (!Auth::check()) {
+        return redirect('/login')->with('error', 'Silakan login terlebih dahulu.');
+    }
+
+    if (Auth::user()->level != 0) {
+        return redirect('/')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
+    }
+
     return view('admin.index');
 });
+
 
 Route::get('/kanban', action: function () {
     return view('kanban');

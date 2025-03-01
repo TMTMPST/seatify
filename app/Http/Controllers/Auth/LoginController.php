@@ -10,15 +10,14 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
+        // Validasi input
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
 
         if (Auth::attempt($request->only('email', 'password'))) {
-            $user = Auth::user();
-
-            return $user->level == 0 ? redirect('/admin') : redirect('/');
+            return redirect()->intended('/admin');
         }
 
         return back()->with('error', 'Email atau password salah.');
