@@ -13,9 +13,8 @@
                     Berakhir 1 Mar 2025 | 23.59
                 </div>
             </div>
-        
             <!-- Card Body -->
-            <div id="eventCard" class="flex items-center justify-between rounded-b-xl bg-white p-4 border-2 border-gray-100 hover:border-blue-700 cursor-pointer transition-all duration-300 ease-in-out">
+            <div id="open-modal" class="flex items-center justify-between rounded-b-xl bg-white p-4 border-2 border-gray-100 hover:border-blue-700 cursor-pointer transition-all duration-300 ease-in-out">
                 <div class="flex items-start space-x-4">
                     <div class="text-left pr-2 flex flex-col justify-between h-full">
                         <p class="text-xl font-bold text-gray-800">Mar 2</p>
@@ -75,5 +74,6 @@
         </div>
     </div>
 </section>
+@include('components.widget.pembayaran_tiket')
 
 

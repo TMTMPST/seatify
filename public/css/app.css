@@ -6,3 +6,6 @@
 body{
     background-color: #233876;
 }
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
