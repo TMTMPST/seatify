@@ -19,7 +19,6 @@
             </a>
         </div>
     </div>
-
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://mmc.tirto.id/image/otf/640x0/2020/06/09/benny-likumahuwa_ratio-16x9.jpg" alt="Konser Benny Likumahuwa Jazz Connection" />
@@ -40,7 +39,6 @@
             </a>
         </div>
     </div>
-
     <div class="w-full bg-white border border-gray-200 rounded-xl shadow-sm">
         <a href="#">
             <img class="h-48 w-full object-cover rounded-t-xl" src="https://t-2.tstatic.net/wartakota/foto/bank/images/tulus-koj.jpg" alt="Konser Tulus Jazz Night" />
