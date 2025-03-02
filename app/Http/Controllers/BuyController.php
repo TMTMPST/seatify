@@ -28,9 +28,9 @@ class BuyController extends Controller
         return response()->json([
             'jumlah_tiket' => $jumlahTiket,
             'kategori' => ucfirst($kategori),
-            'harga' => 'Rp ' . number_format($hargaTotal, 0, ',', '.'),
+            'harga' => 'Rp.' . number_format($hargaTotal, 0, ',', '.'),
             'diskon' => $diskon > 0 ? '-Rp ' . number_format($diskon, 0, ',', '.') : '-',
-            'total' => 'Rp ' . number_format($totalPembayaran, 0, ',', '.'),
+            'total' => 'Rp.' . number_format($totalPembayaran, 0, ',', '.'),
         ]);
     }
 }
