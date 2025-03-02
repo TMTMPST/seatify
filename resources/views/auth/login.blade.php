@@ -5,11 +5,11 @@
         <div class="flex items-center justify-center bg-white text-gray-900 p-8">
             <div class="max-w-md w-full">
                 <h2 class="text-3xl font-bold mb-6">Selamat Datang 🤩</h2>
-                <div class="flex gap-4 mb-6">
+                <a href="{{ route('google.login') }}" class="flex gap-4 mb-6">
                     <button class="flex items-center justify-center w-full py-3 px-4 font-medium hover:bg-gray-200 cursor-pointer bg-gray-100 text-gray-700 rounded-xl">
                         <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google" class="h-5 w-5 mr-2"> Masuk Dengan Google
                     </button>
-                </div>
+                </a>
                 <hr class="h-px my-8 bg-gray-200 border-0">                              
                 <form class="space-y-4" method="POST" action="{{ route('login.post') }}">
                     @csrf
