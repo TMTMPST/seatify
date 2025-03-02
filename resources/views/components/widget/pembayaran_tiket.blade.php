@@ -2,7 +2,7 @@
     <div class="relative w-full max-w-md bg-white rounded-xl shadow-sm">
         <div class="flex items-center justify-between p-4 border-b border-gray-200">
             <h3 class="text-xl font-bold text-gray-900">Pembelian Tiket Konser</h3>
-            <button id="close-modal" class="text-gray-400 hover:bg-gray-200 rounded-lg w-8 h-8 flex justify-center items-center">
+            <button id="close-modal" class="text-gray-400 hover:bg-gray-200 rounded-lg cursor-pointer w-8 h-8 flex justify-center items-center">
                 <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7l-6 6"/>
                 </svg>
@@ -39,15 +39,55 @@
                 </div>
                 <div class="col-span-2">
                     <label for="kodePromo" class="block mb-2 text-sm font-medium text-gray-900">Kode promo</label>
-                    <input type="text" id="kodePromo" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Masukkan kode promo" required />
+                    <input type="text" id="kodePromo" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Masukkan kode promo" />
                 </div>
-                <div class="border-t border-gray-300 border-dashed col-span-2 p-2 font-semibold">
-                    Total Pembayaran
-                </div>
+                <div class="col-span-2" id="totalPembayaran"></div>
             </div>
-            <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white p-2.5 rounded-xl font-medium">
+            <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 cursor-pointer text-white p-2.5 rounded-xl font-medium">
                 Beli Tiket
             </button>
         </form>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const jumlahTiket = document.getElementById('jumlahTiket');
+        const kategoriTiket = document.getElementById('kategoriTiket');
+        const kodePromo = document.getElementById('kodePromo');
+        function hitungTotal() {
+            let data = {
+                jumlahTiket: jumlahTiket.value,
+                kategoriTiket: kategoriTiket.value,
+                kodePromo: kodePromo.value
+            };
+            fetch('/hitung-total', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('totalPembayaran').innerHTML = `
+                    <div class="border-t border-gray-300 border-dashed col-span-2 text-xl p-2 font-semibold">
+                        Pembayaran
+                    </div>
+                    <div class="col-span-2 p-2">
+                        <p>Jumlah Tiket: ${data.jumlah_tiket}</p>
+                        <p>Kategori: ${data.kategori}</p>
+                        <p>Harga: ${data.harga}</p>
+                        <p>Diskon: ${data.diskon}</p>
+                        <p class="text-lg font-bold">Total: ${data.total}</p>
+                    </div>
+                `;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        jumlahTiket.addEventListener('change', hitungTotal);
+        kategoriTiket.addEventListener('change', hitungTotal);
+        kodePromo.addEventListener('input', hitungTotal);
+    });
+</script>    

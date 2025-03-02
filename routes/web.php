@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BuyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +29,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/detail-konser', function(){
     return view('detail_concert');
 });
+
+Route::post('/hitung-total', [BuyController::class, 'calculateTotal']);
 
 // Admin 
 
