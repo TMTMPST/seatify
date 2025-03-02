@@ -42,7 +42,7 @@
                         <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
                 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">
+                    <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white py-2.5 rounded-xl font-medium cursor-pointer">
                         Masuk
                     </button>
                 </form>                
