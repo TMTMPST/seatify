@@ -8,7 +8,6 @@ class BuyController extends Controller
 {
     public function calculateTotal(Request $request)
     {
-        // Ambil data dari request
         $jumlahTiket = (int) $request->input('jumlahTiket');
         $kategori = $request->input('kategoriTiket');
         $kodePromo = strtoupper(trim($request->input('kodePromo')));
@@ -18,17 +17,12 @@ class BuyController extends Controller
 
         // Penyesuaian harga berdasarkan kategori
         $tambahanVIP = $kategori === 'vip' ? 100000 : 0;
-
-        // Hitung harga total sebelum diskon
         $hargaTotal = ($hargaTiket + $tambahanVIP) * $jumlahTiket;
-
-        // Cek apakah kode promo berlaku
         $diskon = 0;
         if ($kodePromo === 'RAMADHAN2025') {
             $diskon = 0.2 * $hargaTotal; // Diskon 20%
         }
 
-        // Harga akhir setelah diskon
         $totalPembayaran = $hargaTotal - $diskon;
 
         return response()->json([
