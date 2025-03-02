@@ -15,16 +15,25 @@
                     @csrf
                     <div>
                         <label for="email" class="block text-sm font-medium">Email</label>
-                        <input type="email" id="email" name="email" class="w-full mt-1 p-2 bg-gray-50 border border-gray-200 rounded-lg" placeholder="Enter your email" required />
-                        @error('email') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-                    </div>
-                    
+                        <input type="email" id="email" name="email"
+                            class="w-full mt-1 p-2 bg-gray-50 border 
+                                @error('email') border-red-500 @else border-gray-200 @enderror 
+                            rounded-lg" placeholder="Enter your email" required
+                            value="{{ old('email') }}"/>
+                        @error('email')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>                    
                     <div>
                         <label for="password" class="block text-sm font-medium">Kata Sandi</label>
-                        <input type="password" id="password" name="password" class="w-full mt-1 p-2 bg-gray-50 border border-gray-200 rounded-lg" placeholder="******" required />
-                        @error('password') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
+                        <input type="password" id="password" name="password"
+                            class="w-full mt-1 p-2 bg-gray-50 border 
+                                @error('password') border-red-500 @else border-gray-200 @enderror 
+                            rounded-lg" placeholder="******" required />
+                        @error('password')
+                            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
-                
                     <div class="flex items-center justify-between">
                         <label class="inline-flex items-center">
                             <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600 rounded-sm" />
@@ -33,14 +42,23 @@
                         <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
                 
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">Masuk</button>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-medium cursor-pointer">
+                        Masuk
+                    </button>
                 </form>                
-                <p class="mt-4 text-center text-sm font-medium">Belum Punya Akun? <a href="/register" class="text-blue-700 font-medium">Daftar</a></p>
+
+                <p class="mt-4 text-center text-sm font-medium">
+                    Belum Punya Akun? <a href="/register" class="text-blue-700 font-medium">Daftar</a>
+                </p>
             </div>
         </div>
+
         <div class="bg-blue-900 text-white flex flex-col justify-center p-8">
             <h1 class="text-4xl font-bold underline decoration-wavy">Nikmati Konser Impian Anda!</h1>
-            <p class="mt-4 text-lg font-medium">Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. Jangan lewatkan momen tak terlupakan!</p>
+            <p class="mt-4 text-lg font-medium">
+                Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. 
+                Jangan lewatkan momen tak terlupakan!
+            </p>
             <div class="flex items-center mt-6 gap-2">
                 <div class="flex -space-x-4 rtl:space-x-reverse">
                     <img class="w-10 h-10 border-2 border-white rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
@@ -52,4 +70,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
