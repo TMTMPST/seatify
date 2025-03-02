@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\BuyController;
+use App\Http\Controllers\Auth\GoogleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,7 +18,10 @@ Route::get('/konser', function () {
 
 Route::get('/login', function(){
     return view('auth.login');
-});
+})->name('login');
+
+Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -29,6 +34,10 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/detail-konser', function(){
     return view('detail_concert');
 });
+
+Route::post('/hitung-total', [BuyController::class, 'hitungTotal']);
+Route::post('/buat-pesanan', [BuyController::class, 'buatPesanan']);
+Route::post('/midtrans/notification', [BuyController::class, 'handleNotification']);
 
 // Admin 
 

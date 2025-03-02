@@ -8,11 +8,11 @@
         </div>
         <div class="space-y-6">
             <div>
-                <h2 class="text-3xl font-bold text-gray-800">🎵 Tentang Band</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Tentang Band</h2>
                 <p class="text-gray-900 mt-2 font-medium text-md">Slank awalnya terbentuk dari grup musik sekolah bernama Cikini Stones Complex (CSC) yang terinspirasi dari The Rolling Stones. Setelah bongkar-pasang personel, Bimbim membentuk Slank dengan formasi awal yang akhirnya merilis album debut mereka, "Suit... Suit... He... He... (Gadis Sexy)" pada tahun 1990. Album ini langsung meledak di pasaran dan mengukuhkan nama Slank di industri musik Indonesia. Sepanjang kariernya, Slank dikenal sering mengangkat isu sosial, politik, dan cinta dalam lirik lagunya. Mereka juga dikenal sebagai band yang anti-narkoba setelah sempat bergelut dengan ketergantungan pada dekade 1990-an.</p>
             </div>
             <div>
-                <h2 class="text-3xl font-bold text-gray-800">👥 Anggota Band</h2>
+                <h2 class="text-3xl font-bold text-gray-800">Anggota Band</h2>
                 <p class="text-gray-900 mt-2 font-medium text-md">Formasi Band Slank Sekarang :</p>
                 <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                     <!-- Card Kaka -->
