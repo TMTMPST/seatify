@@ -30,7 +30,9 @@ Route::get('/detail-konser', function(){
     return view('detail_concert');
 });
 
-Route::post('/hitung-total', [BuyController::class, 'calculateTotal']);
+Route::post('/hitung-total', [BuyController::class, 'hitungTotal']);
+Route::post('/buat-pesanan', [BuyController::class, 'buatPesanan']);
+Route::post('/midtrans/notification', [BuyController::class, 'handleNotification']);
 
 // Admin 
 

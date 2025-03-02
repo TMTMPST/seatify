@@ -17,6 +17,7 @@
     @include('components.footer')
     <script src="{{'js/detailConcert.js'}}"></script>
     <script src="{{'js/buyTickets.js'}}"></script>
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>
