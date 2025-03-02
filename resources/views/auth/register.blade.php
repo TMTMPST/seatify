@@ -35,21 +35,7 @@
                     <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-blue-700 font-medium">Masuk</a></p>
                 </div>
             </div>
-            
-            <!-- Info Section -->
-            <div class="bg-blue-900 text-white flex flex-col justify-center p-8">
-                <h1 class="text-4xl font-bold underline decoration-wavy">Nikmati Konser Impian Anda!</h1>
-                <p class="mt-4 text-lg font-medium">Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. Jangan lewatkan momen tak terlupakan!</p>
-                
-                <div class="flex items-center mt-6 gap-2">
-                    <div class="flex -space-x-4 rtl:space-x-reverse">
-                        @foreach ([32, 44, 54, 22] as $id)
-                            <img class="w-10 h-10 border-2 border-white rounded-full" src="https://randomuser.me/api/portraits/men/{{ $id }}.jpg" alt="">
-                        @endforeach
-                    </div>
-                    <p class="ml-4 font-medium">Lebih Dari <strong>15.7k</strong> Pengguna Senang</p>
-                </div>
-            </div>
+            @include('components.widget.sideAuth')
         </div>
     </div>
 @endsection
