@@ -56,6 +56,10 @@ Route::get('/admin/konser', action: function () {
     return view('admin.konser');
 });
 
+Route::get('/admin/bio-artis', action: function () {
+    return view('admin.bio-artis');
+});
+
 Route::get('/admin/konser/tambah-konser', function(){
     return view('admin.functions.tambah_konser');
 });
