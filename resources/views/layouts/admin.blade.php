@@ -12,11 +12,9 @@
     @if(auth()->check() && auth()->user()->level == 0)
         @include('components.header')
         <x-sidebar />
-        <div class="p-4 sm:ml-64">
-            <div class="p-4">
-                <div class="mt-10">
-                    @yield('admin')
-                </div>
+        <div class="p-6 sm:ml-64 mt-8">
+            <div class="mt-10">
+                @yield('admin')
             </div>
         </div>
     @else
