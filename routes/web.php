@@ -72,5 +72,10 @@ Route::get('/admin/konser/tambah-tiket', function(){
 Route::get('/admin/konser/tambah-artis', function(){
     return view('admin.functions.tambah_artis');
 });
-
 Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
+
+Route::get('/admin/users/edit-users/{id}', [AdminController::class, 'edit'])->name('admin.users.edit');
+
+Route::post('/admin/users/update/{id}', [AdminController::class, 'update'])->name('admin.users.update');
+
+Route::delete('/admin/users/delete/{id}', [AdminController::class, 'destroy'])->name('admin.users.delete');

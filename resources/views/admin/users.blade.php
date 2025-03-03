@@ -27,10 +27,21 @@
                             @endif
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <!-- Tombol Edit langsung menuju halaman edit dengan ID -->
+                            <a href="{{ route('admin.users.edit', $user->id) }}" class="text-blue-600 hover:underline font-semibold cursor-pointer">
+                                Edit
+                            </a>
+                            <!-- Tombol Hapus -->
+                            <form action="{{ route('admin.users.delete', $user->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:underline font-semibold cursor-pointer" onclick="return confirm('Yakin ingin menghapus pengguna ini?')">
+                                    Hapus
+                                </button>
+                            </form>
                         </td>
                     </tr>
-                @endforeach
+                @endforeach            
             </tbody>
         </table>
     </div>
