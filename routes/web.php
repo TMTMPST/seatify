@@ -56,13 +56,20 @@ Route::get('/admin/konser', action: function () {
     return view('admin.konser');
 });
 
+Route::get('/admin/konser/tambah-konser', function(){
+    return view('admin.functions.tambah_konser');
+});
 
-Route::get('/kanban', action: function () {
-    return view('kanban');
+Route::get('/admin/konser/tambah-tiket', function(){
+    return view('admin.functions.tambah_tiket');
 });
-Route::get('/inbox', action: function () {
-    return view('inbox');
-});
-Route::get('/users', action: function () {
-    return view('users');
-});
+
+// Route::get('/kanban', action: function () {
+//     return view('kanban');
+// });
+// Route::get('/inbox', action: function () {
+//     return view('inbox');
+// });
+// Route::get('/users', action: function () {
+//     return view('users');
+// });
