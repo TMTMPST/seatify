@@ -28,7 +28,23 @@
                 </select>                 
             </div>
             @include('components.widget.admin.form.formArtisBand')
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Selanjutnya</button>
+            <hr class="h-px bg-gray-200 border-0 mb-5">
+            <div class="lg:grid lg:grid-cols-2 gap-5">
+                <div class="mb-5">
+                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900">Instagram</label>
+                    <input type="text" id="text" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Social Media" required />
+                </div>
+                <div class="mb-5">
+                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900">Spotify</label>
+                    <input type="text" id="text" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Social Media" required />
+                </div>
+            </div>
+            <div class="flex flex-row space-x-2">
+                <a href="/admin/bio-artis">
+                    <button type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-5 py-2.5 text-center cursor-pointer">Kembali</button>
+                </a>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-5 py-2.5 text-center cursor-pointer">Buat Data</button>
+            </div>
         </form>  
     </div>
 @endsection
