@@ -52,6 +52,9 @@ Route::get('/admin', function () {
 
     return view('admin.index');
 });
+Route::get('/admin/konser', action: function () {
+    return view('admin.konser');
+});
 
 
 Route::get('/kanban', action: function () {
