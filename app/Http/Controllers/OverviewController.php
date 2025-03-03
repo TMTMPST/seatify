@@ -8,7 +8,7 @@ class OverviewController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard', [
+        return view('admin.overview', [
             'showKonser' => true,
             'showPengguna' => false,
             'showPendapatan' => false
