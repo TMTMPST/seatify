@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -71,3 +72,5 @@ Route::get('/admin/konser/tambah-tiket', function(){
 Route::get('/admin/konser/tambah-artis', function(){
     return view('admin.functions.tambah_artis');
 });
+
+Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
