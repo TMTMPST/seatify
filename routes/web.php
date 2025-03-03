@@ -68,12 +68,6 @@ Route::get('/admin/konser/tambah-tiket', function(){
     return view('admin.functions.tambah_tiket');
 });
 
-// Route::get('/kanban', action: function () {
-//     return view('kanban');
-// });
-// Route::get('/inbox', action: function () {
-//     return view('inbox');
-// });
-// Route::get('/users', action: function () {
-//     return view('users');
-// });
+Route::get('/admin/konser/tambah-artis', function(){
+    return view('admin.functions.tambah_artis');
+});
