@@ -7,9 +7,9 @@
         <ul id="faq-list">
             @foreach ($faqs as $faq)
                 <li>
-                    <button class="faq-toggle relative flex gap-2 items-center w-full py-5 text-left border-b border-blue-800 text-lg font-semibold" aria-expanded="false">
+                    <button class="faq-toggle relative flex gap-2 items-center w-full py-5 text-left border-b border-blue-800 cursor-pointer text-lg font-semibold" aria-expanded="false">
                         <span class="flex-1 text-white">{{ $faq['question'] }}</span>
-                        <svg class="faq-icon w-4 h-4 ml-auto fill-current transition-transform duration-200 ease-out" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="faq-icon w-4 h-4 ml-auto fill-current transition-transform duration-200 ease-out" fill="#fff" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <rect y="7" width="16" height="2" rx="1"></rect>
                             <rect y="7" width="16" height="2" rx="1" class="rotate-90"></rect>
                         </svg>
