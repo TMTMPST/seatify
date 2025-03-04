@@ -9,3 +9,9 @@ body{
 .modal-overlay {
     background-color: rgba(0, 0, 0, 0.5); 
 }
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}

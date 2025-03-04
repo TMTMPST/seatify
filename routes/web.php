@@ -40,6 +40,8 @@ Route::post('/hitung-total', [BuyController::class, 'hitungTotal']);
 Route::post('/buat-pesanan', [BuyController::class, 'buatPesanan']);
 Route::post('/midtrans/notification', [BuyController::class, 'handleNotification']);
 
+Route::view('/faq', 'components.widget.faq');
+
 // Admin 
 
 Route::get('/admin', function () {

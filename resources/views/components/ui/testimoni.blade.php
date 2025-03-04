@@ -35,3 +35,4 @@
         </div>
     </div>
 </section>
+<x-faq-component />
