@@ -1,4 +1,4 @@
-<div class="bg-blue-900 text-white flex flex-col justify-center p-8 lg:block hidden">
+<div class="bg-blue-900 text-white lg:flex flex-col justify-center p-8 md:hidden hidden sm:hidden">
     <h1 class="text-4xl font-bold underline decoration-wavy">Nikmati Konser Impian Anda!</h1>
     <p class="mt-4 text-lg font-medium">
         Masuk untuk mengakses tiket eksklusif, update artis favorit, dan pengalaman konser terbaik. 
