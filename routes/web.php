@@ -7,6 +7,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DaftarKonserController;
+use App\Http\Controllers\KategoriKonserController;
+
 
 Route::get('/', function () {
     return view('welcome');
