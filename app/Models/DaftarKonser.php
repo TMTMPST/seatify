@@ -13,6 +13,10 @@ class DaftarKonser extends Model
 
     protected $fillable = ['kategori_id', 'gambar', 'judul', 'deskripsi', 'ketersediaan_tiket'];
 
+    protected $casts = [
+        'ketersediaan_tiket' => 'boolean',
+    ];
+
     public function kategori()
     {
         return $this->belongsTo(KategoriKonser::class, 'kategori_id');
