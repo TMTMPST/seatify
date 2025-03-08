@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\DaftarKonser;
 use App\Models\KategoriKonser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class DaftarKonserController extends Controller
 {
@@ -40,7 +39,13 @@ class DaftarKonserController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $gambarPath = $request->file('gambar')->store('konser', 'public');
+        // Simpan gambar ke public/images/konser/
+        $gambar = $request->file('gambar');
+        $gambarNama = time() . '_' . $gambar->getClientOriginalName();
+        $gambar->move(public_path('images/konser'), $gambarNama);
+
+        // Simpan path gambar ke database
+        $gambarPath = 'images/konser/' . $gambarNama;
 
         DaftarKonser::create([
             'kategori_id' => $request->kategori_id,
@@ -90,15 +95,19 @@ class DaftarKonserController extends Controller
             'ketersediaan_tiket' => $request->ketersediaan_tiket,
         ];
 
+        // Jika ada gambar baru yang diunggah
         if ($request->hasFile('gambar')) {
-            // Delete old image
-            if ($konser->gambar) {
-                Storage::disk('public')->delete($konser->gambar);
+            // Hapus gambar lama jika ada
+            if ($konser->gambar && file_exists(public_path($konser->gambar))) {
+                unlink(public_path($konser->gambar));
             }
-            
-            // Store new image
-            $gambarPath = $request->file('gambar')->store('konser', 'public');
-            $data['gambar'] = $gambarPath;
+
+            // Simpan gambar baru ke public/images/konser/
+            $gambar = $request->file('gambar');
+            $gambarNama = time() . '_' . $gambar->getClientOriginalName();
+            $gambar->move(public_path('images/konser'), $gambarNama);
+
+            $data['gambar'] = 'images/konser/' . $gambarNama;
         }
 
         $konser->update($data);
@@ -111,11 +120,11 @@ class DaftarKonserController extends Controller
      */
     public function destroy(DaftarKonser $konser)
     {
-        // Delete image file
-        if ($konser->gambar) {
-            Storage::disk('public')->delete($konser->gambar);
+        // Hapus gambar jika ada
+        if ($konser->gambar && file_exists(public_path($konser->gambar))) {
+            unlink(public_path($konser->gambar));
         }
-        
+
         $konser->delete();
 
         return redirect()->route('konser.index')->with('success', 'Konser berhasil dihapus');
