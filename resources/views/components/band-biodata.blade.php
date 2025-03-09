@@ -38,6 +38,29 @@
                         @endif
                     </div>
                 </div>
+                <div class="mt-5">
+                    <h1 class="text-3xl font-bold">Lagu Terpopuler</h1>
+                    <div class="space-y-4 mt-5 grid grid-cols-1 lg:grid-cols-2 gap-2">
+                        @foreach ($band->songs as $song)
+                            <iframe style="border-radius:12px" src="{{ $song->spotify_url }}" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <h1 class="text-3xl font-bold">Social Media</h1>
+                    <div class="flex space-x-1 mt-4">
+                        @foreach ($band->socialMedia as $social)
+                            <a href="{{ $social->url }}" class="" target="_blank">
+                                <button type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 font-medium rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center cursor-pointer me-2 mb-2">
+                                    <svg class="w-5 h-5 me-2 ms-1 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                                    </svg>                                      
+                                    {{ $social->platform }}
+                                </button>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </section>
