@@ -24,11 +24,10 @@
                 <div class="col-span-2 sm:col-span-1">
                     <label for="kategoriTiket" class="block mb-2 text-sm font-medium text-gray-900">Kategori Tiket</label>
                     <select id="kategoriTiket" class="w-full p-2.5 border border-gray-300 rounded-xl bg-gray-100">
-                        <option selected>Pilih kategori</option>
                         <option value="vip">VIP</option>
-                        <option value="reguler">Reguler</option>
+                        <option value="reguler" selected>Reguler</option>
                     </select>
-                </div>
+                </div>                
                 <div id="benefitVIP" class="col-span-2 p-3 bg-blue-100 border border-blue-300 rounded-xl border-dashed hidden">
                     <p class="text-lg font-semibold text-blue-900">✨ Benefit VIP ✨</p>
                     <div class="flex flex-col text-sm font-medium mt-2">
@@ -43,7 +42,7 @@
                 </div>
                 <div class="col-span-2" id="totalPembayaran"></div>
             </div>
-            <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 cursor-pointer text-white p-2.5 rounded-xl font-medium">
+            <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 cursor-pointer text-white p-2.5 rounded-xl font-medium">
                 Beli Tiket
             </button>
         </form>
