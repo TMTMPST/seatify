@@ -18,7 +18,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700">{{ $konser->deskripsi }}</p>
                     @if ($konser->ketersediaan_tiket)
-                        <a href="/detail-konser/{{ $konser->id }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 hover:bg-blue-900 rounded-lg">
+                        <a href="/detail-konser/{{ $konser->id }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 rounded-lg">
                             Lihat Konser
                             <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
