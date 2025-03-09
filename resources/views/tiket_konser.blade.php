@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>        
-            <div class="flex items-center justify-between rounded-xl bg-gray-200 p-4 border-2 border-gray-200">
+            <div class="flex items-center justify-between rounded-xl bg-gray-100 p-4 border-2 border-gray-200">
                 <div class="flex items-start space-x-4">
                     <div class="text-left pr-2 flex flex-col justify-between h-full">
                         <p class="text-xl font-bold text-gray-400">AUG 10</p>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-between rounded-xl bg-gray-200 p-4 border-2 border-gray-200">
+            <div class="flex items-center justify-between rounded-xl bg-gray-100 p-4 border-2 border-gray-200">
                 <div class="flex items-start space-x-4">
                     <div class="text-left pr-2 flex flex-col justify-between h-full">
                         <p class="text-xl font-bold text-gray-400">AUG 10</p>
