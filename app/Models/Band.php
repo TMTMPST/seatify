@@ -12,7 +12,7 @@ class Band extends Model
 
     public function members()
     {
-        return $this->hasMany(BandMember::class);
+        return $this->hasMany(BandMember::class, 'band_id');
     }
 
     public function songs()

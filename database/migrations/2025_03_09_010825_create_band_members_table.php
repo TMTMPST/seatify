@@ -9,10 +9,10 @@ return new class extends Migration {
     {
         Schema::create('band_members', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('band_id')->constrained()->onDelete('cascade');
+            $table->foreignId('band_id')->constrained('bands')->onDelete('cascade');
             $table->string('name');
             $table->string('role');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -22,4 +22,3 @@ return new class extends Migration {
         Schema::dropIfExists('band_members');
     }
 };
-

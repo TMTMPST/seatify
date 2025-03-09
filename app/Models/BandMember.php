@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class BandMember extends Model
 {
     use HasFactory;
+
     protected $fillable = ['band_id', 'name', 'role', 'image'];
 
     public function band()
     {
-        return $this->belongsTo(Band::class);
+        return $this->belongsTo(Band::class, 'band_id');
     }
 }
-

@@ -9,17 +9,11 @@ class BandController extends Controller
 {
     public function index()
     {
-        $band = Band::with(['members', 'songs', 'socialMedia'])->first();
-
-        // Pastikan ada data sebelum mengakses relasi
-        $anggota = $band ? $band->members : collect([]);
-        $lagu = $band ? $band->songs->pluck('url') : collect([]);
+        $band = Band::with(['members'])->first();
 
         return view('components.ui.biodata_artis', [
             'band' => $band,
-            'anggota' => $anggota,
-            'lagu' => $lagu
+            'anggota' => $band ? $band->members : collect([])
         ]);
     }
 }
-

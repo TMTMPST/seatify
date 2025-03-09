@@ -25,7 +25,7 @@ class BandSeeder extends Seeder
             ['name' => 'Ivanka', 'role' => 'Bass', 'image' => 'https://slank.com/wp-content/uploads/2013/03/IVANKA.jpg'],
         ];
         foreach ($members as $member) {
-            $band->members()->create($member);
+            BandMember::create(array_merge($member, ['band_id' => $band->id]));
         }
 
         $songs = [
