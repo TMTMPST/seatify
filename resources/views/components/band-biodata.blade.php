@@ -7,7 +7,7 @@
                     <img src="{{ $band->banner_image }}" alt="{{ $band->name }}" class="w-full h-80 object-cover bg-center flex items-center justify-center rounded-xl" />
                 </div>
                 <!-- Ticket Information -->
-                <div class="bg-white border border-gray-200 h-80 px-6 py-5 rounded-xl max-w-sm w-full flex flex-col">
+                <div class="bg-white border border-gray-200 h-80 px-6 py-5 rounded-xl max-w-sm w-full flex flex-col lg:block hidden">
                     <h2 class="text-xl font-semibold mb-4">Informasi Tiket</h2>
                     <div class="flex-1 space-y-6">
                         <ul class="space-y-4">
