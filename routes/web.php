@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BandController;
 use App\Models\DaftarKonser;
 
 
@@ -44,6 +45,8 @@ Route::post('/buat-pesanan', [BuyController::class, 'buatPesanan']);
 Route::post('/midtrans/notification', [BuyController::class, 'handleNotification']);
 
 Route::view('/faq', 'components.widget.faq');
+
+Route::get('/band', [BandController::class, 'index']);
 
 // Admin 
 
