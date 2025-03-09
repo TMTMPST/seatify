@@ -55,23 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     kategoriTiket.addEventListener("change", updateTotalPembayaran);
     kodePromo.addEventListener("input", updateTotalPembayaran);
 
-    formPembelian.addEventListener("submit", async (e) => {
+    formPembelian.addEventListener("submit", (e) => {
         e.preventDefault();
-    
-        // Cek apakah user sudah login
-        const isLoggedIn = await fetch("/cek-login")
-            .then(response => response.json())
-            .then(data => data.logged_in)
-            .catch(error => {
-                console.error("Error saat memeriksa login:", error);
-                return false;
-            });
-    
-        if (!isLoggedIn) {
-            window.location.href = "/login";
-            return;
-        }
-    
+        
         const jumlah = parseInt(jumlahTiket.value) || 0;
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
@@ -97,5 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error:", error));
-    });       
+    });    
 });

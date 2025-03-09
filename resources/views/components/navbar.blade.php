@@ -33,8 +33,8 @@
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Transaksi</a>
                         </li>
                         <li>
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
+                            <form action="{{ route('logout') }}" method="POST" class="cursor-pointer flex items-center p-2Z text-red-500 rounded-lg hover:bg-gray-100">
+                                @csrf                 
                                 <button type="submit" class="block w-full cursor-pointer text-left px-4 py-2 text-sm text-red-700 hover:bg-gray-100">
                                     Keluar
                                 </button>
