@@ -74,6 +74,7 @@
         </div>
     </div>
 </section>
+<script src="{{ asset('js/buyTickets.js') }}"></script>
 @include('components.widget.pembayaran_tiket')
 
 

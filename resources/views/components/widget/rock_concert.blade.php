@@ -18,12 +18,18 @@ $konserKategori3 = App\Models\DaftarKonser::where('kategori_id', 3)->get();
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $konser->judul }}</h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700">{{ $konser->deskripsi }}</p>
-                <a href="/detail-konser/{{ $konser->id }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white {{ $konser->ketersediaan_tiket ? 'bg-blue-800 hover:bg-blue-900' : 'bg-gray-300 hover:bg-gray-400' }} rounded-lg">
-                    Lihat Konser
-                    <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
-                    </svg>                  
-                </a>
+                @if ($konser->ketersediaan_tiket)
+                    <a href="/detail-konser/{{ $konser->id }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-800 hover:bg-blue-900 rounded-lg">
+                        Lihat Konser
+                        <svg class="rotate-45 mt-[1px] w-5 h-5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+                        </svg>                  
+                    </a>
+                @else
+                    <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-gray-300 rounded-lg opacity-50 pointer-events-none">
+                        Tiket Habis
+                    </button>
+                @endif
             </div>
         </div>
     @endforeach

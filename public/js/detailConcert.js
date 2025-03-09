@@ -1,21 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle-btn');
-    const sections = document.querySelectorAll('.toggle-section');
-    const showSection = (sectionId) => {
-        sections.forEach(section => section.classList.toggle('hidden', section.id !== sectionId));
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".toggle-btn");
+    const sections = document.querySelectorAll(".toggle-section");
 
-        buttons.forEach(btn => {
-            const isActive = btn.dataset.section === sectionId;
-            btn.classList.toggle('bg-blue-800', isActive);
-            btn.classList.toggle('text-white', isActive);
-            btn.classList.toggle('bg-gray-100', !isActive);
-            btn.classList.toggle('text-gray-500', !isActive);
+    // Set default aktif pada Bio Artis, Tiket tidak aktif
+    document.getElementById("biodata").classList.remove("hidden");
+    buttons.forEach(btn => btn.classList.remove("bg-white", "text-black", "border-blue-700", "bg-transparent", "text-white", "border-white"));
+
+    const bioBtn = document.querySelector("[data-section='biodata']");
+    const tiketBtn = document.querySelector("[data-section='tiket']");
+
+    bioBtn.classList.add("bg-white", "text-black", "border-blue-700"); 
+    tiketBtn.classList.add("bg-transparent", "text-white", "border-white"); 
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            const sectionToShow = this.getAttribute("data-section");
+            sections.forEach(section => section.classList.add("hidden"));
+            document.getElementById(sectionToShow).classList.remove("hidden");
+            buttons.forEach(btn => btn.classList.remove("bg-white", "text-black", "border-blue-700", "bg-transparent", "text-white", "border-white"));
+            if (sectionToShow === "biodata") {
+                bioBtn.classList.add("bg-white", "text-black", "border-blue-700");
+                tiketBtn.classList.add("bg-transparent", "text-white", "border-white");
+            } else {
+                bioBtn.classList.add("bg-transparent", "text-white", "border-white");
+                tiketBtn.classList.add("bg-white", "text-black", "border-blue-700");
+            }
         });
-    };
-    showSection('biodata');
-    buttons.forEach(button => 
-        button.addEventListener('click', () => showSection(button.dataset.section))
-    );
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {

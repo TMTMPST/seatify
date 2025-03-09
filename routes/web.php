@@ -7,8 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\DaftarKonserController;
-use App\Http\Controllers\KategoriKonserController;
+use App\Models\DaftarKonser;
 
 
 Route::get('/', function () {
@@ -35,8 +34,9 @@ Route::get('/register', function(){
 });
 Route::post('/register', [RegisterController::class, 'register']);
 
-Route::get('/detail-konser', function(){
-    return view('detail_concert');
+Route::get('/detail-konser/{id}', function ($id) {
+    $konser = DaftarKonser::findOrFail($id);
+    return view('detail_concert', compact('konser'));
 });
 
 Route::post('/hitung-total', [BuyController::class, 'hitungTotal']);

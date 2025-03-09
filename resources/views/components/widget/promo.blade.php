@@ -1,8 +1,8 @@
 <section class="bg-blue-900">
     <div class="py-8 px-4 mx-auto max-w-screen-xl text-left">
         <h1 class="mb-3 text-4xl lg:text-5xl md:text-3xl font-bold tracking-tight leading-none text-white">Nikmati Promonya!</h1>
-        <div class="mt-10 lg:grid-cols-3 lg:grid grid grid-cols-1 gap-2">
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+        <div class="mt-10 lg:grid-cols-3 lg:grid grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
+            <div class="w-full p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Promo Natal 2025</h5>
                 <p class="mb-3 font-normal text-gray-700">Gunakan kode promo berikut untuk mendapatkan potongan 20% di Natal 2025.</p>
                 <div class="flex items-center justify-between bg-gray-100 p-2 rounded-md">
@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+            <div class="w-full p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Promo Tahun Baru 2026</h5>
                 <p class="mb-3 font-normal text-gray-700">Dapatkan potongan 50% awal tahun dengan kode promo spesial berikut.</p>
                 <div class="flex items-center justify-between bg-gray-100 p-2 rounded-md">
@@ -23,7 +23,7 @@
                     </button>
                 </div>
             </div>
-            <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
+            <div class="w-full p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Promo Ramadhan 2025</h5>
                 <p class="mb-3 font-normal text-gray-700">Dapatkan potongan 20% awal ramadhan dengan kode promo spesial berikut.</p>
                 <div class="flex items-center justify-between bg-gray-100 p-2 rounded-md">
