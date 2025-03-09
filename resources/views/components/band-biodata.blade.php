@@ -16,7 +16,9 @@
                         </ul>
                         <div class="w-full bg-gray-200 text-gray-900 text-left py-3 px-3 rounded-xl text-sm font-medium">Biaya tambahan mungkin dikenakan</div>
                     </div>                
-                    <button class="mt-auto w-full bg-gray-800 hover:bg-gray-900 cursor-pointer text-white py-2 rounded-xl font-medium ">Beli Tiket</button>
+                    <a href="/detail-konser/1/tiket">
+                        <button class="mt-auto w-full bg-gray-800 hover:bg-gray-900 cursor-pointer text-white py-2 rounded-xl font-medium ">Beli Tiket</button>
+                    </a>
                 </div>                         
             </div>
             <!-- Band Information -->

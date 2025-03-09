@@ -2,7 +2,15 @@
 @section('content')
     <section class="bg-white rounded-t-xl">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-left lg:py-16 space-y-5">
-            <div class="flex flex-col justify-between">
+            <a href="/detail-konser/1">
+                <button type="button" class="text-gray-900 border-2 border-gray-100 bg-white hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-gray-100 cursor-pointer font-medium rounded-xl text-sm px-6 py-2.5 text-center inline-flex items-center">
+                    <svg class="w-6 h-6 me-2 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                    </svg>                  
+                    Kembali
+                </button>
+            </a>
+            <div class="flex flex-col mt-5 justify-between">
                 <!-- Card Event -->
                 <div class="inline-flex items-center rounded-t-xl bg-blue-200 px-4 py-2 text-md gap-1 font-medium text-blue-700 justify-between">
                     <div class="flex gap-1">
