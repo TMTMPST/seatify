@@ -39,6 +39,10 @@ Route::get('/detail-konser/{id}', function ($id) {
     $konser = DaftarKonser::findOrFail($id);
     return view('detail_concert', compact('konser'));
 });
+Route::get('/detail-konser/{id}/tiket', function ($id) {
+    $konser = DaftarKonser::findOrFail($id);
+    return view('tiket_konser', compact('konser'));
+});
 
 Route::post('/hitung-total', [BuyController::class, 'hitungTotal']);
 Route::post('/buat-pesanan', [BuyController::class, 'buatPesanan']);
