@@ -26,8 +26,8 @@
     </div>
 
     <div id="biodata" class="toggle-section">
-        @component('components.ui.biodata_artis') @endcomponent
-    </div>
+        <x-band-biodata />
+    </div>    
     <div id="tiket" class="toggle-section hidden">
         @component('components.ui.tiket_konser') @endcomponent
     </div>    

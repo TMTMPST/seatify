@@ -9,11 +9,8 @@ class BandController extends Controller
 {
     public function index()
     {
-        $band = Band::with(['members'])->first();
+        $band = Band::with('members')->first();
 
-        return view('components.ui.biodata_artis', [
-            'band' => $band,
-            'anggota' => $band ? $band->members : collect([])
-        ]);
+        return view('detail_concert', compact('band'));
     }
 }
