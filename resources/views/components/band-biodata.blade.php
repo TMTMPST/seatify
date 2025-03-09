@@ -24,6 +24,20 @@
             <div>
                 <h1 class="text-3xl font-bold">{{ $band->name }}</h1>
                 <p class="mt-2 text-gray-700">{{ $band->description }}</p>
+                <div class="mt-5">
+                    <h1 class="text-3xl font-bold">Band Member</h1>
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-3 justify-left gap-5">
+                        @if ($band->members->isNotEmpty())
+                            @foreach ($band->members as $member )
+                                <div class="w-full bg-white border border-gray-200 rounded-xl p-4 text-center">
+                                    <img class="mx-auto w-24 h-24 rounded-full bg-gray-200" src="{{ $member->image }}" alt="{{ $member->name }}">
+                                    <h3 class="mt-4 text-lg font-semibold text-gray-900">{{ $member->name }}</h3>
+                                    <p class="text-sm text-gray-500">{{ $member->role }}</p>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
     </section>
