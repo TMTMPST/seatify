@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("crud-modal");
     const openModal = document.getElementById("open-modal");
     const closeModal = document.getElementById("close-modal");
+    const successModal = document.getElementById("success-modal"); // Modal sukses
+    const closeSuccessModal = document.getElementById("close-success-modal");
 
     const toggleModal = (show) => modal.classList.toggle("hidden", !show);
     
@@ -56,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     kodePromo.addEventListener("input", updateTotalPembayaran);
 
     formPembelian.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
+        e.preventDefault(); // Hindari refresh halaman
+    
         const jumlah = parseInt(jumlahTiket.value) || 0;
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
@@ -77,11 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             if (data.redirect_url) {
-                window.location.href = data.redirect_url; // Redirect ke Midtrans
+                // Buka URL pembayaran Midtrans di tab baru
+                window.open(data.redirect_url, "_blank");
             } else {
-                alert("Terjadi kesalahan saat membuat pesanan.");
+                successModal.classList.remove("hidden"); // Tampilkan modal sukses
             }
         })
-        .catch(error => console.error("Error:", error));
-    });    
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    closeSuccessModal.addEventListener("click", () => {
+        successModal.classList.add("hidden");
+    });
 });

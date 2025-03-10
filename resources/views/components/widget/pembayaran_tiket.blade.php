@@ -8,17 +8,17 @@
                 </svg>
             </button>
         </div>
-        <form class="p-4">
+        <form class="p-4" onsubmit="return false;">
             <div class="grid gap-4 mb-4 grid-cols-2">
                 <div class="col-span-2 sm:col-span-1">
                     <label for="jumlahTiket" class="block mb-2 text-sm font-medium text-gray-900">Tiket</label>
                     <select id="jumlahTiket" class="w-full p-2.5 border border-gray-300 rounded-xl bg-gray-100">
                         <option selected>Pilih Jumlah Tiket</option>
-                        <option value="1Tiket">1 Tiket</option>
-                        <option value="2Tiket">2 Tiket</option>
-                        <option value="3Tiket">3 Tiket</option>
-                        <option value="4Tiket">4 Tiket</option>
-                        <option value="5Tiket">5 Tiket</option>
+                        <option value="1">1 Tiket</option>
+                        <option value="2">2 Tiket</option>
+                        <option value="3">3 Tiket</option>
+                        <option value="4">4 Tiket</option>
+                        <option value="5">5 Tiket</option>
                     </select>
                 </div>
                 <div class="col-span-2 sm:col-span-1">
