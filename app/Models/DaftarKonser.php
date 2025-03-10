@@ -21,4 +21,8 @@ class DaftarKonser extends Model
     {
         return $this->belongsTo(KategoriKonser::class, 'kategori_id');
     }
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class, 'konser_id');
+    }
 }

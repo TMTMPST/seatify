@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cek-login', function () {
+    return response()->json(['logged_in' => auth()->check()]);
+});
 
 Route::get('/konser', function () {
     return view('konser');
