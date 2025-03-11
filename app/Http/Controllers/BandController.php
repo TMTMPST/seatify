@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Band;
+use App\Models\BandMember;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 
 class BandController extends Controller

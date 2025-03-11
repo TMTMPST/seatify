@@ -70,15 +70,11 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 Route::get('/admin/konser', [DaftarKonserController::class, 'index']);
-
-Route::get('/admin/band', [BandController::class, 'Adminindex']);
-
-
 Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'create']);
 Route::get('/admin/konser/tambah-tiket', function(){
     return view('admin.functions.tambah_tiket');
 });
-
+Route::get('/admin/band', [BandController::class, 'Adminindex']);
 Route::get('/admin/konser/tambah-band', function(){
     return view('admin.functions.tambah_band');
 });
