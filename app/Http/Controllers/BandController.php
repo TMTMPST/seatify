@@ -7,6 +7,7 @@ use App\Models\BandMember;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class BandController extends Controller
 {
@@ -95,25 +96,34 @@ class BandController extends Controller
         return redirect()->route('admin.band.index')->with('success', 'Band berhasil dihapus!');
     }
 
+
     public function storeMember(Request $request, $bandId)
     {
+        Log::info('Store member method called');
         $band = Band::findOrFail($bandId);
-
+    
         $validatedData = $request->validate([
             'members.*.name' => 'required|string|max:255',
             'members.*.role' => 'required|string|max:255',
-            'members.*.image' => 'nullable|string|url',
+            'members.*.image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        foreach ($validatedData['members'] as $memberData) {
+    
+        foreach ($validatedData['members'] ?? [] as $index => $memberData) {
+            $imagePath = '';
+    
+            if ($request->hasFile("members.$index.image")) {
+                $image = $request->file("members.$index.image");
+                $imagePath = $image->store('images/band_members', 'public');
+            }
+    
             BandMember::create([
                 'band_id' => $band->id,
                 'name' => $memberData['name'],
                 'role' => $memberData['role'],
-                'image' => $memberData['image'] ?? null,
+                'image' => $imagePath,
             ]);
         }
-
+    
         return redirect()->route('admin.band.index')->with('success', 'Anggota band berhasil ditambahkan!');
     }
 

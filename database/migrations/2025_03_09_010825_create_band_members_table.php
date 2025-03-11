@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->foreignId('band_id')->constrained('bands')->onDelete('cascade');
             $table->string('name');
             $table->string('role');
-            $table->string('image')->nullable();
+            $table->string('image')->default('');
             $table->timestamps();
         });
     }
