@@ -33,13 +33,14 @@ class BandController extends Controller
         $bannerPath = $request->file('banner_image')->store('images/banner_band', 'public');
 
         // Simpan data band
-        Band::create([
+        $band = Band::create([
             'name' => $request->name,
             'banner_image' => $bannerPath,
             'description' => $request->description,
         ]);
 
-        return redirect()->route('admin.band.index')->with('success', 'Band berhasil ditambahkan!');
+        // Redirect to tambah anggota page for this band
+        return redirect()->route('admin.band.anggota.create', ['band' => $band->id])->with('success', 'Band berhasil ditambahkan!');
     }
     // ✅ Fungsi Edit
     public function edit($id)
@@ -92,5 +93,33 @@ class BandController extends Controller
         $band->delete();
 
         return redirect()->route('admin.band.index')->with('success', 'Band berhasil dihapus!');
+    }
+
+    public function storeMember(Request $request, $bandId)
+    {
+        $band = Band::findOrFail($bandId);
+
+        $validatedData = $request->validate([
+            'members.*.name' => 'required|string|max:255',
+            'members.*.role' => 'required|string|max:255',
+            'members.*.image' => 'nullable|string|url',
+        ]);
+
+        foreach ($validatedData['members'] as $memberData) {
+            BandMember::create([
+                'band_id' => $band->id,
+                'name' => $memberData['name'],
+                'role' => $memberData['role'],
+                'image' => $memberData['image'] ?? null,
+            ]);
+        }
+
+        return redirect()->route('admin.band.index')->with('success', 'Anggota band berhasil ditambahkan!');
+    }
+
+    public function createMember($bandId)
+    {
+        $band = Band::findOrFail($bandId);
+        return view('admin.functions.tambah_anggota', compact('band'));
     }
 }
