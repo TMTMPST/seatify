@@ -2,7 +2,7 @@
 
 @section('admin')
 <div class="bg-gray-100 p-5 rounded-xl">
-    <form action="{{ route('admin.band.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.band.anggota.store', $band->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="band_id" value="{{ $band->id }}">
         

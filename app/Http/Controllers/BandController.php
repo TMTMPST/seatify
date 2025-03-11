@@ -6,6 +6,7 @@ use App\Models\Band;
 use App\Models\BandMember;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BandController extends Controller
 {
@@ -48,26 +49,21 @@ class BandController extends Controller
     public function storeAnggota(Request $request, $band_id)
     {
         $request->validate([
-            'nama_anggota.*' => 'required|string|max:255',
-            'posisi_anggota.*' => 'required|string|max:255',
-            'foto_anggota.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name.*' => 'required|string|max:255',
+            'role.*' => 'required|string|max:255',
+            // 'image.*' tidak perlu diuji dulu
         ]);
 
         $band = Band::findOrFail($band_id);
 
-        foreach ($request->nama_anggota as $index => $nama) {
+        foreach ($request->name as $index => $nama) {
             $anggota = new BandMember();
             $anggota->band_id = $band->id;
-            $anggota->nama = $nama;
-            $anggota->posisi = $request->posisi_anggota[$index];
+            $anggota->name = $nama;
+            $anggota->role = $request->role[$index];
 
-            // Simpan Foto
-            if ($request->hasFile("foto_anggota.$index")) {
-                $file = $request->file("foto_anggota.$index");
-                $filename = time() . "_anggota_" . $index . "." . $file->getClientOriginalExtension();
-                $file->storeAs("public/anggota", $filename);
-                $anggota->foto = "storage/anggota/" . $filename;
-            }
+            // **Tanpa gambar dulu**
+            // $anggota->image = null;
 
             $anggota->save();
         }
