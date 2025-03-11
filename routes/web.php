@@ -74,7 +74,7 @@ Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'creat
 Route::get('/admin/konser/tambah-tiket', function(){
     return view('admin.functions.tambah_tiket');
 });
-Route::get('/admin/band', [BandController::class, 'Adminindex']);
+Route::get('/admin/band', [BandController::class, 'Adminindex'])->name('admin.band.index');
 Route::get('/admin/konser/tambah-band', function () {
     return view('admin.functions.tambah_band');
 })->name('admin.band.create');
