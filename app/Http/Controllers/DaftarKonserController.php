@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DaftarKonser;
 use App\Models\KategoriKonser;
+use App\Models\Band;
 use Illuminate\Http\Request;
 
 class DaftarKonserController extends Controller
@@ -16,7 +17,8 @@ class DaftarKonserController extends Controller
     public function create()
     {
         $kategori = KategoriKonser::all();
-        return view('admin.functions.tambah_konser', compact('kategori'));
+        $band = Band::all();
+        return view('admin.functions.tambah_konser', compact('kategori', 'band'));
     }
 
     /**

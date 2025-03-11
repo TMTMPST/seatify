@@ -71,20 +71,16 @@ Route::get('/admin', function () {
 });
 Route::get('/admin/konser', [DaftarKonserController::class, 'index']);
 
-Route::get('/admin/bio-artis', action: function () {
-    return view('admin.bio-artis');
-});
+Route::get('/admin/band', [BandController::class, 'Adminindex']);
 
-Route::get('/admin/konser/tambah-konser', function(){
-    return view('admin.functions.tambah_konser');
-});
 
+Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'create']);
 Route::get('/admin/konser/tambah-tiket', function(){
     return view('admin.functions.tambah_tiket');
 });
 
-Route::get('/admin/konser/tambah-artis', function(){
-    return view('admin.functions.tambah_artis');
+Route::get('/admin/konser/tambah-band', function(){
+    return view('admin.functions.tambah_band');
 });
 Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
 

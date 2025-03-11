@@ -13,4 +13,9 @@ class BandController extends Controller
 
         return view('detail_concert', compact('band'));
     }
+    public function Adminindex()
+    {
+        $bands = Band::with(['members', 'socialMedia'])->get();
+        return view('admin.band', compact('bands'));
+    }
 }
