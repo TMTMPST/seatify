@@ -5,7 +5,7 @@
         <form action="{{ route('admin.band.anggota.store', ['band' => $band->id]) }}" method="POST" enctype="multipart/form-data" class="w-full mx-auto">
             @csrf
             <input type="hidden" name="band" value="{{ $band->id }}">
-            {{-- {{ dd($band->id) }} --}}
+            
             <div class="mb-5">
                 <label for="jumlah_anggota" class="block mb-2 text-sm font-medium text-gray-900">Jumlah Anggota Band</label>
                 <select id="jumlah_anggota" name="jumlah_anggota" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
@@ -16,7 +16,7 @@
                     <option value="4">4</option>
                 </select>                 
             </div>
-
+        
             <div class="mb-5 lg:grid lg:grid-cols-2 gap-5">
                 @for ($i = 1; $i <= 4; $i++)
                     <div id="anggota{{ $i }}" class="anggota" style="display: none;">
@@ -38,7 +38,7 @@
                     </div>
                 @endfor
             </div>
-
+        
             <div class="flex flex-row space-x-2">
                 <a href="{{ route('admin.band.index') }}">
                     <button type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-5 py-2.5 text-center cursor-pointer">Kembali</button>
@@ -52,7 +52,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const dropdown = document.getElementById("jumlah_anggota");
             const maxAnggota = 4;
-
+    
             function updateVisibility() {
                 let selectedValue = parseInt(dropdown.value) || 0;
                 for (let i = 1; i <= maxAnggota; i++) {
@@ -64,10 +64,10 @@
                     }
                 }
             }
-
+    
             dropdown.addEventListener("change", updateVisibility);
             
-            // Set default display berdasarkan nilai yang dipilih sebelumnya (jika ada)
+            // Set default display based on previously selected value (if any)
             updateVisibility();
         });
     </script>

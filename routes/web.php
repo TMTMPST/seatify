@@ -86,6 +86,9 @@ Route::get('/admin/band/{band}/social/{social}/edit', [BandSocialController::cla
 Route::put('/admin/band/{band}/social/{social}', [BandSocialController::class, 'update'])->name('admin.band.social.update');
 
 Route::post('/admin/konser/tambah-band', [BandController::class, 'store'])->name('admin.band.store');
+Route::get('/admin/konser/{band}/tambah-anggota', [BandController::class, 'createMember'])->name('admin.band.anggota.create');
+// Add this route for storing band members
+Route::post('/admin/konser/{band}/anggota', [BandController::class, 'storeMember'])->name('admin.band.anggota.store');
 
 Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
 
