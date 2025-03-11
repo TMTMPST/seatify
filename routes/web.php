@@ -82,6 +82,8 @@ Route::get('/admin/band/tambah-band', function () {
 
 Route::get('/admin/band/{band}/tambah-social', [BandSocialController::class, 'create'])->name('admin.band.social.create');
 Route::post('/admin/band/{band}/social/store', [BandSocialController::class, 'store'])->name('admin.band.social.store');
+Route::get('/admin/band/{band}/social/{social}/edit', [BandSocialController::class, 'edit'])->name('admin.band.social.edit');
+Route::put('/admin/band/{band}/social/{social}', [BandSocialController::class, 'update'])->name('admin.band.social.update');
 
 Route::post('/admin/konser/tambah-band', [BandController::class, 'store'])->name('admin.band.store');
 
@@ -92,6 +94,10 @@ Route::get('/admin/users/edit-users/{id}', [AdminController::class, 'edit'])->na
 Route::post('/admin/users/update/{id}', [AdminController::class, 'update'])->name('admin.users.update');
 
 Route::delete('/admin/users/delete/{id}', [AdminController::class, 'destroy'])->name('admin.users.delete');
+
+Route::get('/band/{id}/edit', [BandController::class, 'edit'])->name('admin.band.edit');
+Route::put('/band/{id}', [BandController::class, 'update'])->name('admin.band.update');
+Route::delete('/band/{id}', [BandController::class, 'destroy'])->name('admin.band.destroy');
 
 // resources
 

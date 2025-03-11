@@ -23,6 +23,6 @@ class Band extends Model
 
     public function socialMedia()
     {
-        return $this->hasMany(SocialMedia::class);
+        return $this->hasMany(SocialMedia::class, 'band_id');
     }
 }

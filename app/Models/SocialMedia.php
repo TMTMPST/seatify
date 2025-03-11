@@ -13,6 +13,6 @@ class SocialMedia extends Model
 
     public function band()
     {
-        return $this->belongsTo(Band::class);
+        return $this->belongsTo(Band::class, 'band_id');
     }
 }

@@ -41,4 +41,56 @@ class BandController extends Controller
 
         return redirect()->route('admin.band.index')->with('success', 'Band berhasil ditambahkan!');
     }
+    // ✅ Fungsi Edit
+    public function edit($id)
+    {
+        $band = Band::findOrFail($id);
+        return view('admin.functions.edit_band', compact('band'));
+    }
+
+    // ✅ Fungsi Update
+    public function update(Request $request, $id)
+    {
+        $band = Band::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'banner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'description' => 'nullable|string',
+        ]);
+
+        // Jika ada banner baru, hapus yang lama
+        if ($request->hasFile('banner_image')) {
+            if ($band->banner_image) {
+                Storage::disk('public')->delete($band->banner_image);
+            }
+            $bannerPath = $request->file('banner_image')->store('images/banner_band', 'public');
+            $band->banner_image = $bannerPath;
+        }
+
+        // Update data band
+        $band->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'banner_image' => $band->banner_image,
+        ]);
+
+        return redirect()->route('admin.band.index')->with('success', 'Band berhasil diperbarui!');
+    }
+
+    // ✅ Fungsi Delete
+    public function destroy($id)
+    {
+        $band = Band::findOrFail($id);
+
+        // Hapus banner jika ada
+        if ($band->banner_image) {
+            Storage::disk('public')->delete($band->banner_image);
+        }
+
+        // Hapus band dari database
+        $band->delete();
+
+        return redirect()->route('admin.band.index')->with('success', 'Band berhasil dihapus!');
+    }
 }
