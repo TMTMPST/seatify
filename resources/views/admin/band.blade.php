@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('admin')
-    <a href="/admin/konser/tambah-band">
+    <a href="/admin/band/tambah-band">
         <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-gray-800 rounded-xl hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 cursor-pointer">
             Tambah Band
         </button>
