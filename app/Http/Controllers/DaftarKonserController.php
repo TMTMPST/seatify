@@ -8,22 +8,15 @@ use Illuminate\Http\Request;
 
 class DaftarKonserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $konser = DaftarKonser::with('kategori')->get();
-        return view('konser.index', compact('konser'));
+        return view('admin.konser', compact('konser'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $kategori = KategoriKonser::all();
-        return view('konser.create', compact('kategori'));
+        return view('admin.functions.tambah_konser', compact('kategori'));
     }
 
     /**

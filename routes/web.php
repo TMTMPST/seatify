@@ -8,6 +8,7 @@ use App\Http\Controllers\BuyController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\DaftarKonserController;
 use App\Models\DaftarKonser;
 
 
@@ -68,9 +69,7 @@ Route::get('/admin', function () {
 
     return view('admin.index');
 });
-Route::get('/admin/konser', action: function () {
-    return view('admin.konser');
-});
+Route::get('/admin/konser', [DaftarKonserController::class, 'index']);
 
 Route::get('/admin/bio-artis', action: function () {
     return view('admin.bio-artis');
@@ -94,3 +93,7 @@ Route::get('/admin/users/edit-users/{id}', [AdminController::class, 'edit'])->na
 Route::post('/admin/users/update/{id}', [AdminController::class, 'update'])->name('admin.users.update');
 
 Route::delete('/admin/users/delete/{id}', [AdminController::class, 'destroy'])->name('admin.users.delete');
+
+// resources
+
+Route::resource('konser', DaftarKonserController::class);
