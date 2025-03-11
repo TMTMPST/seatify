@@ -41,33 +41,4 @@ class BandController extends Controller
 
         return redirect()->route('admin.band.index')->with('success', 'Band berhasil ditambahkan!');
     }
-    public function createAnggota($band_id)
-    {
-        $band = Band::findOrFail($band_id);
-        return view('admin.functions.tambah_anggota', compact('band'));
-    }
-    public function storeAnggota(Request $request, $band_id)
-    {
-        $request->validate([
-            'name.*' => 'required|string|max:255',
-            'role.*' => 'required|string|max:255',
-            // 'image.*' tidak perlu diuji dulu
-        ]);
-
-        $band = Band::findOrFail($band_id);
-
-        foreach ($request->name as $index => $nama) {
-            $anggota = new BandMember();
-            $anggota->band_id = $band->id;
-            $anggota->name = $nama;
-            $anggota->role = $request->role[$index];
-
-            // **Tanpa gambar dulu**
-            // $anggota->image = null;
-
-            $anggota->save();
-        }
-
-        return redirect()->route('admin.band.index')->with('success', 'Anggota band berhasil ditambahkan!');
-    }
 }

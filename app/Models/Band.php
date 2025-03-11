@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Band extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name', 'description', 'banner_image'];
 
     public function members()

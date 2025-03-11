@@ -13,6 +13,6 @@ class BandMember extends Model
 
     public function band()
     {
-        return $this->belongsTo(Band::class, 'band_id');
+        return $this->belongsTo(Band::class);
     }
 }
