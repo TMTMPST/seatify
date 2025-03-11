@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BandController;
 use App\Http\Controllers\DaftarKonserController;
+use App\Http\Controllers\BandSocialController;
 use App\Models\DaftarKonser;
 
 
@@ -78,6 +79,9 @@ Route::get('/admin/band', [BandController::class, 'Adminindex'])->name('admin.ba
 Route::get('/admin/band/tambah-band', function () {
     return view('admin.functions.tambah_band');
 })->name('admin.band.create');
+
+Route::get('/admin/band/{band}/tambah-social', [BandSocialController::class, 'create'])->name('admin.band.social.create');
+Route::post('/admin/band/{band}/social/store', [BandSocialController::class, 'store'])->name('admin.band.social.store');
 
 Route::post('/admin/konser/tambah-band', [BandController::class, 'store'])->name('admin.band.store');
 

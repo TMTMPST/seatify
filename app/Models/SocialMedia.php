@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SocialMedia extends Model
 {
     use HasFactory;
+
     protected $fillable = ['band_id', 'platform', 'url'];
 
     public function band()
@@ -15,4 +16,3 @@ class SocialMedia extends Model
         return $this->belongsTo(Band::class);
     }
 }
-

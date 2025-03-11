@@ -25,7 +25,7 @@
                         <td class="px-6 py-4">
                             {{ \Illuminate\Support\Str::words($band->description, 50, '...') }}
                         </td>
-                        <td class="px-6 py-4">
+                        {{-- <td class="px-6 py-4">
                             @if ($band->members->count() > 0)
                                 {{ $band->members->count() }} anggota
                             @else
@@ -33,19 +33,19 @@
                                     Tambah Anggota
                                 </a>
                             @endif
-                        </td>
+                        </td> --}}
                         <td class="px-6 py-4">
-                            {{-- @if ($band->socialMedia->count() > 0)
+                            @if ($band->socialMedia->count() > 0)
                                 @foreach ($band->socialMedia as $social)
                                     <a href="{{ $social->url }}" target="_blank" class="text-blue-500 hover:underline">
                                         {{ ucfirst($social->platform) }}
                                     </a><br>
                                 @endforeach
                             @else
-                                <a href="{{ route('admin.band.addSocialMedia', $band->id) }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('admin.band.socialCreate', $band->id) }}" class="text-blue-500 hover:underline">
                                     Tambah Social Media
                                 </a>
-                            @endif --}}
+                            @endif
                         </td>
                     </tr>
                 @endforeach
