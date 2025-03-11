@@ -75,9 +75,11 @@ Route::get('/admin/konser/tambah-tiket', function(){
     return view('admin.functions.tambah_tiket');
 });
 Route::get('/admin/band', [BandController::class, 'Adminindex']);
-Route::get('/admin/konser/tambah-band', function(){
+Route::get('/admin/konser/tambah-band', function () {
     return view('admin.functions.tambah_band');
-});
+})->name('admin.band.create');
+Route::post('/admin/konser/tambah-band', [BandController::class, 'store'])->name('admin.band.store');
+
 Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
 
 Route::get('/admin/users/edit-users/{id}', [AdminController::class, 'edit'])->name('admin.users.edit');
