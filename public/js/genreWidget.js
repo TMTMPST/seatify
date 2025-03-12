@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         buttons.forEach(button => {
             const isActive = button.dataset.genre === genre;
-            button.classList.toggle('bg-gray-800', isActive);
-            button.classList.toggle('text-white', isActive);
+            button.classList.toggle('bg-yellow-300', isActive);
+            button.classList.toggle('text-gray-900', isActive);
             button.classList.toggle('bg-gray-100', !isActive);
             button.classList.toggle('text-gray', !isActive);
         });

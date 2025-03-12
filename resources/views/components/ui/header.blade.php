@@ -8,7 +8,7 @@
         @php $genres = ['rock' => '🎸 Rock', 'pop' => '🎙️ Pop', 'jazz' => '🎶 Jazz']; @endphp
         <div class="flex flex-wrap justify-left gap-1 mb-8">
             @foreach ($genres as $genre => $label)
-                <button type="button" class="genre-btn {{ $loop->first ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray' }} border-2 border-gray-200 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" 
+                <button type="button" class="genre-btn {{ $loop->first ? 'bg-yellow-300 text-gray-900' : 'bg-gray-100 text-gray' }} border-2 border-gray-200 focus:outline-none cursor-pointer focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-6 py-3 me-2 mb-2 transition-all duration-300 ease-in-out" 
                     data-genre="{{ $genre }}">
                     {{ $label }}
                 </button>
