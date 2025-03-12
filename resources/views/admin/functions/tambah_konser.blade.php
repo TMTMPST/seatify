@@ -33,7 +33,15 @@
                 <label for="judul" class="block mb-2 text-sm font-medium text-gray-900">Judul Konser</label>
                 <input type="text" name="judul" id="judul" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Judul Konser" required />
             </div>
-
+            <!-- Ketersediaan Tiket -->
+            <div class="mb-5">
+                <label for="ketersediaan_tiket" class="block mb-2 text-sm font-medium text-gray-900">Ketersediaan Tiket</label>
+                <select name="ketersediaan_tiket" id="ketersediaan_tiket" 
+                    class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                    <option value="1">Tersedia</option>
+                    <option value="0">Tidak Tersedia</option>
+                </select>
+            </div>
             <!-- Deskripsi -->
             <div class="mb-5">
                 <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900">Deskripsi</label>

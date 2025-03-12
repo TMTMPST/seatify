@@ -25,4 +25,8 @@ class Band extends Model
     {
         return $this->hasMany(SocialMedia::class, 'band_id');
     }
+    public function konser()
+    {
+        return $this->hasMany(DaftarKonser::class, 'band_id');
+    }
 }

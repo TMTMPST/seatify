@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\KategoriKonser;
 use App\Models\DaftarKonser;
+use App\Models\Band;
 
 class DaftarKonserSeeder extends Seeder
 {
@@ -113,6 +114,7 @@ class DaftarKonserSeeder extends Seeder
 
             DaftarKonser::create([
                 'kategori_id' => $kategori->id,
+                'band_id' => Band::inRandomOrder()->first()->id,
                 'judul' => $k['judul'],
                 'deskripsi' => $k['deskripsi'],
                 'gambar' => $k['gambar'],
