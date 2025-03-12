@@ -50,7 +50,7 @@
                         </td>
                         <td class="px-6 py-4 text-center relative">
                             <div class="inline-block text-left">
-                                <button onclick="toggleDropdown(this)" class="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700">
+                                <button onclick="toggleDropdown(this)" class="px-3 py-1 text-gray-500 bg-gray-200 rounded-lg hover:bg-blue-400 cursor-pointer">
                                     ⋮
                                 </button>
                                 <div class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
