@@ -12,6 +12,7 @@
                 <tr>
                     <th scope="col" class="px-6 py-3">Nama Band</th>
                     <th scope="col" class="px-6 py-3">Deskripsi Band</th>
+                    <th scope="col" class="px-6 py-3">Anggota</th>
                     <th scope="col" class="px-6 py-3">Social Media</th>
                     <th scope="col" class="px-6 py-3 text-center">Aksi</th>
                 </tr>
@@ -24,6 +25,15 @@
                         </th>
                         <td class="px-6 py-4">
                             {{ \Illuminate\Support\Str::words($band->description, 50, '...') }}
+                        </td>
+                        <td class="px-6 py-4">
+                            @if ($band->members->count() > 0)
+                                {{ $band->members->count() }} Anggota
+                            @else
+                                <a href="{{ route('admin.band.anggota.create', $band->id) }}" class="text-blue-500 hover:underline">
+                                    Tambah Anggota
+                                </a>
+                            @endif
                         </td>
                         <td class="px-6 py-4">
                             @if ($band->socialMedia->count() > 0)
