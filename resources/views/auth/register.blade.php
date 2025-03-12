@@ -29,10 +29,10 @@
                                 @enderror
                             </div>
                         @endforeach
-                        <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white py-2.5 rounded-xl font-medium cursor-pointer">Daftar</button>
+                        <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-2.5 rounded-xl font-medium cursor-pointer">Daftar</button>
                     </form>
                     
-                    <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-blue-700 font-medium">Masuk</a></p>
+                    <p class="mt-4 text-center text-sm font-medium">Sudah Punya Akun? <a href="/login" class="text-green-700 font-medium">Masuk</a></p>
                 </div>
             </div>
             @include('components.widget.sideAuth')

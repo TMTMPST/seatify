@@ -32,7 +32,7 @@ class BandSocialController extends Controller
     // Fungsi Edit
     public function edit(Band $band, SocialMedia $social)
     {
-        return view('admin.functions.edit_band', compact('band', 'social'));
+        return view('admin.functions.edit_social', compact('band', 'social'));
     }
 
     /// Fungsi Update

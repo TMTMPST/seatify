@@ -6,7 +6,7 @@
     <hr class="h-px my-8 bg-gray-300 border-0">
 
     <a href="/admin/konser/tambah-konser">
-        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-gray-800 rounded-xl hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 cursor-pointer">
+        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-green-700 rounded-xl hover:bg-green-800 focus:ring-4 focus:ring-gray-300 cursor-pointer">
             Tambah Konser
         </button>
     </a>

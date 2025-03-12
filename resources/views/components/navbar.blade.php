@@ -8,7 +8,7 @@
         <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             @guest
                 <a href="{{ route('login') }}" class="block">
-                    <button type="button" class="bg-gray-100 cursor-pointer hover:bg-gray-300 text-gray-900 font-medium rounded-lg text-sm px-4 py-2 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    <button type="button" class="bg-gray-100 cursor-pointer hover:bg-gray-300 text-gray-900 font-medium rounded-lg text-sm px-4 py-2">
                         Masuk
                     </button>
                 </a>

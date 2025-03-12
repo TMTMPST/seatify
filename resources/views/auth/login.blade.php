@@ -36,18 +36,18 @@
                     </div>
                     <div class="flex items-center justify-between">
                         <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox h-4 w-4 text-blue-600 rounded-sm" />
+                            <input type="checkbox" class="form-checkbox h-4 w-4 text-green-600 rounded-sm" />
                             <span class="ml-2 text-sm">Ingat aku</span>
                         </label>
-                        <a href="#" class="text-blue-700 font-medium text-sm">Lupa Kata Sandi?</a>
+                        <a href="#" class="text-green-700 font-medium text-sm">Lupa Kata Sandi?</a>
                     </div>
                 
-                    <button type="submit" class="w-full bg-blue-800 hover:bg-blue-900 text-white py-2.5 rounded-xl font-medium cursor-pointer">
+                    <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-2.5 rounded-xl font-medium cursor-pointer">
                         Masuk
                     </button>
                 </form>                
                 <p class="mt-4 text-center text-sm font-medium">
-                    Belum Punya Akun? <a href="/register" class="text-blue-700 font-medium">Daftar</a>
+                    Belum Punya Akun? <a href="/register" class="text-green-700 font-medium">Daftar</a>
                 </p>
             </div>
         </div>

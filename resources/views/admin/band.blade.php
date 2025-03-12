@@ -2,7 +2,7 @@
 
 @section('admin')
     <a href="/admin/band/tambah-band">
-        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-gray-800 rounded-xl hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 cursor-pointer">
+        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-green-700 rounded-xl hover:bg-green-800 focus:ring-4 focus:ring-gray-300 cursor-pointer">
             Tambah Band
         </button>
     </a>
@@ -30,7 +30,7 @@
                             @if ($band->members->count() > 0)
                                 {{ $band->members->count() }} Anggota
                             @else
-                                <a href="{{ route('admin.band.anggota.create', $band->id) }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('admin.band.anggota.create', $band->id) }}" class="text-green-500 hover:underline">
                                     Tambah Anggota
                                 </a>
                             @endif
@@ -38,29 +38,25 @@
                         <td class="px-6 py-4">
                             @if ($band->socialMedia->count() > 0)
                                 @foreach ($band->socialMedia as $social)
-                                    <a href="{{ $social->url }}" target="_blank" class="text-blue-500 hover:underline">
+                                    <a href="{{ $social->url }}" target="_blank" class="text-green-500 hover:underline">
                                         {{ ucfirst($social->platform) }}
                                     </a><br>
                                 @endforeach
                             @else
-                                <a href="{{ route('admin.band.social.create', $band->id) }}" class="text-blue-500 hover:underline">
+                                <a href="{{ route('admin.band.social.create', $band->id) }}" class="text-green-500 hover:underline">
                                     Tambah Social Media
                                 </a>
                             @endif
                         </td>
                         <td class="px-6 py-4 text-center relative">
                             <div class="inline-block text-left">
-                                <button onclick="toggleDropdown(this)" class="px-3 py-1 text-gray-500 bg-gray-200 rounded-lg hover:bg-blue-400 cursor-pointer">
+                                <button onclick="toggleDropdown(this)" class="px-3 py-1 text-gray-500 bg-gray-200 rounded-lg hover:bg-green-400 cursor-pointer">
                                     ⋮
                                 </button>
                                 <div class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                                     <a href="{{ route('admin.band.edit', $band->id) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">✏️ Edit Band</a>
                                     <a href="{{ route('admin.band.anggota.edit', ['band' => $band->id, 'anggota' => $band->members->first()->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">👥 Edit Anggota</a>
-                                    @if($band->socialMedia->count() > 0)
-                                            <a href="{{ route('admin.band.social.edit', ['band' => $band->id, 'social' => $band->socialMedia->first()->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Edit Social Media</a>
-                                        @else
-                                            <a href="{{ route('admin.band.social.create', ['band' => $band->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Tambah Social Media</a>
-                                        @endif
+                                    <a href="{{ route('admin.band.social.edit', ['band' => $band->id, 'social' => $band->socialMedia->first()->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Edit Social Media</a>
                                     <hr class="border-gray-200">
                                     <form action="{{ route('admin.band.destroy', $band->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus band ini?')">
                                         @csrf
