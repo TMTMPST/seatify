@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body{
-    background-color: #fde047;
+    background-color: #15803d;
 }
 .modal-overlay {
     background-color: rgba(0, 0, 0, 0.5); 

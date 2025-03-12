@@ -15,7 +15,7 @@
 
         @if ($konser->ketersediaan_tiket)
             <a href="/detail-konser/{{ $konser->id }}" 
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-300 hover:bg-yellow-400 rounded-lg transition">
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-green-700 hover:bg-yellow-400 rounded-lg transition">
                 Lihat Konser
                 <svg class="w-5 h-5 ms-2 rotate-45 mt-[1px]" aria-hidden="true" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
