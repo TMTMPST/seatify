@@ -60,6 +60,15 @@ Route::prefix('admin')->group(function () {
         Route::post('/tambah-band', [BandController::class, 'store'])->name('admin.band.store');
         Route::get('{band}/tambah-anggota', [BandController::class, 'createMember'])->name('admin.band.anggota.create');
         Route::post('{band}/anggota', [BandController::class, 'storeMember'])->name('admin.band.anggota.store');
+        Route::delete('{band}', [BandController::class, 'destroy'])->name('admin.band.destroy');
+        Route::get('{band}/edit', [BandController::class, 'edit'])->name('admin.band.edit');
+        Route::put('{band}', [BandController::class, 'update'])->name('admin.band.update');
+
+        Route::prefix('{band}/anggota')->group(function () {
+            // Routes for editing band member
+            Route::get('{anggota}/edit', [BandController::class, 'editMember'])->name('admin.band.anggota.edit');
+            Route::put('{anggota}', [BandController::class, 'updateMember'])->name('admin.band.anggota.update');
+        });
 
         // Manajemen Social Media Band
         Route::prefix('{band}/social')->group(function () {

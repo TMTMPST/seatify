@@ -35,7 +35,7 @@ class BandSocialController extends Controller
         return view('admin.functions.edit_band', compact('band', 'social'));
     }
 
-    // Fungsi Update
+    /// Fungsi Update
     public function update(Request $request, SocialMedia $social)
     {
         $request->validate([

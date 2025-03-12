@@ -54,9 +54,13 @@
                                     ⋮
                                 </button>
                                 <div class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">✏️ Edit Band</a>
-                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">👥 Edit Anggota</a>
-                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Edit Social Media</a>
+                                    <a href="{{ route('admin.band.edit', $band->id) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">✏️ Edit Band</a>
+                                    <a href="{{ route('admin.band.anggota.edit', ['band' => $band->id, 'anggota' => $band->members->first()->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">👥 Edit Anggota</a>
+                                    @if($band->socialMedia->count() > 0)
+                                            <a href="{{ route('admin.band.social.edit', ['band' => $band->id, 'social' => $band->socialMedia->first()->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Edit Social Media</a>
+                                        @else
+                                            <a href="{{ route('admin.band.social.create', ['band' => $band->id]) }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Tambah Social Media</a>
+                                        @endif
                                     <hr class="border-gray-200">
                                     <form action="{{ route('admin.band.destroy', $band->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus band ini?')">
                                         @csrf
