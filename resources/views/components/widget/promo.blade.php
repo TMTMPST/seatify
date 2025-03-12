@@ -1,5 +1,5 @@
-<section class="bg-blue-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl text-left">
+<section class="bg-gray-900">
+    <div class="py-12 px-4 mx-auto max-w-screen-xl text-left">
         <h1 class="mb-3 text-4xl lg:text-5xl md:text-3xl font-bold tracking-tight leading-none text-white">Nikmati Promonya!</h1>
         <div class="mt-10 lg:grid-cols-3 lg:grid grid grid-cols-1 md:grid md:grid-cols-2 gap-2">
             @include('components.templates.PromoCard', [

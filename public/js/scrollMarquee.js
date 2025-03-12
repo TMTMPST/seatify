@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const createTextItem = (text) => {
         const span = document.createElement("span");
-        span.className = "text-white text-3xl font-semibold";
+        span.className = "text-3xl font-semibold";
         span.textContent = text;
         return span;
     };
