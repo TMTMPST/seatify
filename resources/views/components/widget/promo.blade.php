@@ -9,7 +9,7 @@
                 'id' => 'promo1'
             ])
 
-            @include('components.templates.PromoCard', [
+            @include(   'components.templates.PromoCard', [
                 'judul' => 'Promo Tahun Baru 2026',
                 'deskripsi' => 'Dapatkan potongan 50% awal tahun dengan kode promo spesial berikut.',
                 'kode' => 'TAHUNBARU2026',
