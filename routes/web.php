@@ -73,6 +73,9 @@ Route::get('/admin', function () {
 Route::get('/admin/konser', [DaftarKonserController::class, 'index'])->name('konser.index');
 Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'create'])->name('konser.create');
 Route::post('/admin/konser/store', [DaftarKonserController::class, 'store'])->name('konser.store');
+Route::get('/admin/konser/{id}/edit', [DaftarKonserController::class, 'edit'])->name('konser.edit');
+Route::put('/admin/konser/{id}', [DaftarKonserController::class, 'update'])->name('konser.update');
+
 
 Route::get('/admin/band', [BandController::class, 'Adminindex'])->name('admin.band.index');
 Route::get('/admin/band/tambah-band', function () {

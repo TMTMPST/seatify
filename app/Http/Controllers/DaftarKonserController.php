@@ -67,48 +67,51 @@ class DaftarKonserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DaftarKonser $konser)
+    public function edit($id)
     {
+        $konser = DaftarKonser::findOrFail($id);
         $kategori = KategoriKonser::all();
-        return view('konser.edit', compact('konser', 'kategori'));
+
+        return view('admin.functions.edit_konser', compact('konser', 'kategori'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DaftarKonser $konser)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'kategori_id' => 'required|exists:kategori_konser,id',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'ketersediaan_tiket' => 'required|in:tersedia,tidak tersedia',
+            'ketersediaan_tiket' => 'required|in:tersedia,tidak tersedia', // Tetap gunakan validasi ini
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $data = [
-            'kategori_id' => $request->kategori_id,
-            'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'ketersediaan_tiket' => $request->ketersediaan_tiket,
-        ];
+        $konser = DaftarKonser::findOrFail($id);
 
-        // Jika ada gambar baru yang diunggah
+        // Konversi nilai 'tersedia' -> 1 dan 'tidak tersedia' -> 0
+        $ketersediaan = $request->ketersediaan_tiket === 'tersedia' ? 1 : 0;
+
+        // Periksa apakah gambar diupdate
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
-            if ($konser->gambar && file_exists(public_path($konser->gambar))) {
-                unlink(public_path($konser->gambar));
-            }
-
-            // Simpan gambar baru ke public/images/konser/
             $gambar = $request->file('gambar');
             $gambarNama = time() . '_' . $gambar->getClientOriginalName();
             $gambar->move(public_path('images/konser'), $gambarNama);
+            $gambarPath = 'images/konser/' . $gambarNama;
 
-            $data['gambar'] = 'images/konser/' . $gambarNama;
+            // Hapus gambar lama jika ada
+            if (file_exists(public_path($konser->gambar))) {
+                unlink(public_path($konser->gambar));
+            }
+
+            $konser->gambar = $gambarPath;
         }
 
-        $konser->update($data);
+        // Simpan perubahan
+        $konser->update([
+            'kategori_id' => $request->kategori_id,
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'ketersediaan_tiket' => $ketersediaan, // Disimpan sebagai 0 atau 1
+        ]);
 
         return redirect()->route('konser.index')->with('success', 'Konser berhasil diperbarui');
     }
