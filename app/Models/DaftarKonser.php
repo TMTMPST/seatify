@@ -11,7 +11,7 @@ class DaftarKonser extends Model
 
     protected $table = 'daftar_konser';
 
-    protected $fillable = ['kategori_id', 'band_id', 'gambar', 'judul', 'deskripsi', 'ketersediaan_tiket']; // Tambahkan 'band_id'
+    protected $fillable = ['kategori_id', 'gambar', 'judul', 'deskripsi', 'ketersediaan_tiket'];
 
     protected $casts = [
         'ketersediaan_tiket' => 'boolean',
@@ -20,15 +20,5 @@ class DaftarKonser extends Model
     public function kategori()
     {
         return $this->belongsTo(KategoriKonser::class, 'kategori_id');
-    }
-
-    public function pembayaran()
-    {
-        return $this->hasMany(Pembayaran::class, 'konser_id');
-    }
-
-    public function band()
-    {
-        return $this->belongsTo(Band::class, 'band_id'); // Relasi ke Band
     }
 }

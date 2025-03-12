@@ -2,6 +2,17 @@
 
 @section('admin')
     <div class="bg-gray-100 p-5 rounded-xl">
+        @if(session('success'))
+            <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="bg-red-500 text-white p-3 rounded-lg mb-3">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <form action="{{ route('konser.store') }}" method="POST" enctype="multipart/form-data" class="w-full mx-auto">
             @csrf
             <div class="lg:grid lg:grid-cols-2 gap-5">
@@ -15,16 +26,14 @@
                         @endforeach
                     </select>                
                 </div>
-
-                <!-- Artis/Band -->
+                <!-- Ketersediaan Tiket -->
                 <div class="mb-5">
-                    <label for="artis" class="block mb-2 text-sm font-medium text-gray-900">Artis / Band</label>
-                    <select name="artis_id" id="artis" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-                        <option value="" disabled selected>Pilih Artis</option>
-                        @foreach ($band as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                        @endforeach
-                    </select> 
+                    <label for="ketersediaan_tiket" class="block mb-2 text-sm font-medium text-gray-900">Ketersediaan Tiket</label>
+                    <select name="ketersediaan_tiket" id="ketersediaan_tiket" 
+                        class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <option value="tersedia">Tersedia</option>
+                        <option value="tidak tersedia">Tidak Tersedia</option>
+                    </select>
                 </div>
             </div>
 
@@ -32,15 +41,6 @@
             <div class="mb-5">
                 <label for="judul" class="block mb-2 text-sm font-medium text-gray-900">Judul Konser</label>
                 <input type="text" name="judul" id="judul" class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Judul Konser" required />
-            </div>
-            <!-- Ketersediaan Tiket -->
-            <div class="mb-5">
-                <label for="ketersediaan_tiket" class="block mb-2 text-sm font-medium text-gray-900">Ketersediaan Tiket</label>
-                <select name="ketersediaan_tiket" id="ketersediaan_tiket" 
-                    class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-                    <option value="1">Tersedia</option>
-                    <option value="0">Tidak Tersedia</option>
-                </select>
             </div>
             <!-- Deskripsi -->
             <div class="mb-5">

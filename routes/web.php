@@ -70,11 +70,10 @@ Route::get('/admin', function () {
 
     return view('admin.index');
 });
-Route::get('/admin/konser', [DaftarKonserController::class, 'index']);
-Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'create']);
-Route::get('/admin/konser/tambah-tiket', function(){
-    return view('admin.functions.tambah_tiket');
-});
+Route::get('/admin/konser', [DaftarKonserController::class, 'index'])->name('konser.index');
+Route::get('/admin/konser/tambah-konser', [DaftarKonserController::class, 'create'])->name('konser.create');
+Route::post('/admin/konser/store', [DaftarKonserController::class, 'store'])->name('konser.store');
+
 Route::get('/admin/band', [BandController::class, 'Adminindex'])->name('admin.band.index');
 Route::get('/admin/band/tambah-band', function () {
     return view('admin.functions.tambah_band');
