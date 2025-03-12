@@ -8,7 +8,7 @@
     <p class="mb-8 text-lg font-bold tracking-tight leading-none text-gray-300 md:text-3xl lg:text-2xl">
         Pesan tiket konser favoritmu dengan mudah dan cepat. Jadilah bagian dari momen spektakuler yang penuh semangat dan kenangan indah!
     </p>
-    <button class="text-gray-900 bg-white hover:bg-gray-200 font-medium rounded-full text-md px-6 py-4 inline-flex items-center">
+    <button class="text-[#1E293B] bg-yellow-300 hover:bg-yellow-400 cursor-pointer font-medium rounded-full text-md px-6 py-4 inline-flex items-center">
         Temukan Konser
         <svg class="w-3.5 h-3.5 ms-2 mt-[2px] rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10" aria-hidden="true">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
