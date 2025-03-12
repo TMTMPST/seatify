@@ -6,9 +6,9 @@
             Tambah Band
         </button>
     </a>
-    <div class="relative overflow-x-auto shadow-sm rounded-xl">
+    <div class="relative overflow-visible shadow-sm rounded-xl">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 rounded-xl">
                 <tr>
                     <th scope="col" class="px-6 py-3">Nama Band</th>
                     <th scope="col" class="px-6 py-3">Deskripsi Band</th>
@@ -17,14 +17,14 @@
                     <th scope="col" class="px-6 py-3 text-center">Aksi</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="rounded-xl">
                 @foreach ($bands as $band)
                     <tr class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $band->name }}
                         </th>
                         <td class="px-6 py-4">
-                            {{ \Illuminate\Support\Str::words($band->description, 50, '...') }}
+                            {{ \Illuminate\Support\Str::words($band->description, 10, '...') }}
                         </td>
                         <td class="px-6 py-4">
                             @if ($band->members->count() > 0)
@@ -48,22 +48,40 @@
                                 </a>
                             @endif
                         </td>
-                        <td class="px-6 py-4 text-center">
-                            <a href="{{ route('admin.band.edit', $band->id) }}" class="text-blue-600 hover:underline">
-                                ✏️ Edit
-                            </a>
-                            |
-                            <form action="{{ route('admin.band.destroy', $band->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus band ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-600 hover:underline cursor-pointer">
-                                    🗑 Hapus
+                        <td class="px-6 py-4 text-center relative">
+                            <div class="inline-block text-left">
+                                <button onclick="toggleDropdown(this)" class="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700">
+                                    ⋮
                                 </button>
-                            </form>
-                        </td>
+                                <div class="hidden absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">✏️ Edit Band</a>
+                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">👥 Edit Anggota</a>
+                                    <a href="" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">🌐 Edit Social Media</a>
+                                    <hr class="border-gray-200">
+                                    <form action="{{ route('admin.band.destroy', $band->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus band ini?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">🗑 Hapus</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>                                     
                     </tr>
                 @endforeach
             </tbody>                
         </table>
     </div>
+    <script>
+        function toggleDropdown(button) {
+            let dropdown = button.nextElementSibling;
+            dropdown.classList.toggle('hidden');
+
+            // Menutup dropdown lain jika ada
+            document.addEventListener('click', function (event) {
+                if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.classList.add('hidden');
+                }
+            }, { once: true });
+        }
+    </script>
 @endsection
