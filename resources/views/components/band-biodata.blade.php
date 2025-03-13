@@ -12,12 +12,12 @@
                     <div class="flex-1 space-y-6">
                         <ul class="space-y-4">
                             <li class="flex justify-between">
-                                <span>Tipe General</span>
-                                <span class="font-bold">Rp. 200.000</span>
+                                <span class="font-medium">Tiket Regular</span>
+                                <span class="font-bold">Rp 200.000</span>
                             </li>
                             <li class="flex justify-between">
-                                <span>Tipe VIP</span> 
-                                <span class="font-bold">+ Rp. 100.000</span>
+                                <span class="font-medium">Tiket VIP</span>
+                                <span class="font-bold">+ Rp 100.000</span>
                             </li>
                         </ul>
                         <div class="w-full bg-gray-200 text-gray-900 text-left py-3 px-3 rounded-xl text-sm font-medium">Biaya tambahan mungkin dikenakan</div>
@@ -71,4 +71,6 @@
             </div>
         </div>
     </section>
+    {{-- @include('components.widget.bottominformation') --}}
+    @include('components.widget.bottombar')
 @endif
