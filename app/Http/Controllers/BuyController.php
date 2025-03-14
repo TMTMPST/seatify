@@ -57,8 +57,8 @@ class BuyController extends Controller
                     'gross_amount' => $totalHarga, // Total harga sesuai perhitungan
                 ],
                 'customer_details' => [
-                    'first_name' => 'Nama',
-                    'email' => 'email@example.com',
+                    'first_name' => Auth::check() ? (Auth::user()->name ?? 'User' . rand(1000, 9999)) : 'Guest' . rand(1000, 9999),
+                    'email' => Auth::check() ? Auth::user()->email : 'guest' . rand(1000, 9999) . '@example.com',
                     'phone' => '08123456789',
                 ]
             ];
