@@ -9,7 +9,7 @@
                     </svg>
                 </button>
                 <a href="javascript:void(0)" class="flex ms-2 md:me-24 items-center">
-                    <img src="{{'images/Seatify.png'}}" class="h-6 me-3" alt="Seatify Logo" />
+                    <img src="{{ asset('images/Seatify.png') }}" class="h-6 me-3" alt="Seatify Logo" />
                     <span class="self-center text-xl lg:block hidden font-semibold sm:text-2xl whitespace-nowrap">Seatify</span>
                 </a>
             </div>

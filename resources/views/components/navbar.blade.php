@@ -1,7 +1,7 @@
 <nav>
     <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-6">
         <a href="javascript:void(0)" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{'images/Seatify.png'}}" class="h-8" alt="Seatify Logo" />
+            <img src="{{ asset('images/Seatify.png') }}" class="h-8" alt="Seatify Logo" />
             <span class="text-2xl font-semibold text-white lg:block hidden">Seatify</span>
         </a>
 
