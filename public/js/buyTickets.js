@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
     
-        fetch("/hitung-total", {
+        fetch("/pembelian/hitung-total", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -64,18 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
     
-        fetch("/buat-pesanan", {
-            method: "POST",
+        fetch('/pembelian/buat-pesanan', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
             body: JSON.stringify({
-                jumlahTiket: jumlah,
-                kategoriTiket: kategori,
-                kodePromo: promo
+                tiket_id: 1,
+                jumlah: 2
             })
-        })
+        })        
         .then(response => response.json())
         .then(data => {
             if (data.redirect_url) {

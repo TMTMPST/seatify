@@ -22,33 +22,32 @@ class BuyController extends Controller
     {
         $request->validate([
             'jumlahTiket' => 'required|integer|min:1',
-            'kategoriTiket' => 'required|string',
-            'kodePromo' => 'nullable|string',
+            'kategori' => 'required|in:vip,regular',
             'konser_id' => 'required|exists:daftar_konser,id'
         ]);
 
         $user = Auth::user();
         $jumlahTiket = (int) $request->jumlahTiket;
-        $kategori = $request->kategoriTiket;
-        $kodePromo = strtoupper(trim($request->kodePromo));
+        $kategori = $request->kategori;
+        $hargaTiket = 200000; // Harga default
 
-        // Perhitungan total harga tiket
-        $hargaTiket = 200000;
-        $tambahanVIP = $kategori === 'vip' ? 100000 : 0;
-        $hargaTotal = ($hargaTiket + $tambahanVIP) * $jumlahTiket;
+        if ($kategori === 'vip') {
+            $hargaTiket += 50000; // Tambahan untuk VIP
+        }
 
-        // Daftar kode promo dan diskonnya
+        $hargaTotal = $jumlahTiket * $hargaTiket;
+
+        // Diskon berdasarkan kode promo
         $promoDiskon = [
-            'RAMADHAN2025' => 0.2, 
-            'NATAL2025' => 0.2,
-            'TAHUNBARU2026' => 0.5
+            'RAMADHAN2025' => 0.2,
+            'NATAL2025' => 0.2
         ];
-
-        // Hitung diskon berdasarkan kode promo
+        $kodePromo = strtoupper(trim($request->input('kodePromo', '')));
         $diskon = isset($promoDiskon[$kodePromo]) ? $promoDiskon[$kodePromo] * $hargaTotal : 0;
-        $totalPembayaran = $hargaTotal - $diskon;
+        $totalPembayaran = max(0, $hargaTotal - $diskon);
 
-        $orderId = 'ORDER-' . time();
+        // Pastikan orderId didefinisikan sebelum digunakan
+        $orderId = 'ORD-' . time();
 
         $transactionDetails = [
             'order_id' => $orderId,
@@ -57,28 +56,40 @@ class BuyController extends Controller
 
         $customerDetails = [
             'first_name' => $user->name,
-            'email' => $user->email,
-            'phone' => '08123456789'
+            'email' => $user->email
         ];
 
         $params = [
             'transaction_details' => $transactionDetails,
-            'customer_details' => $customerDetails
+            'customer_details' => $customerDetails,
+            'item_details' => [
+                [
+                    'id' => 'tiket-' . $kategori,
+                    'price' => $hargaTiket,
+                    'quantity' => $jumlahTiket,
+                    'name' => 'Tiket ' . strtoupper($kategori)
+                ]
+            ]
         ];
 
         try {
-            $snapToken = Snap::createTransaction($params);
+            $snapToken = Snap::getSnapToken($params);
 
-            // Simpan transaksi ke database
+            // Simpan data ke database
             Pembayaran::create([
                 'user_id' => $user->id,
                 'konser_id' => $request->konser_id,
-                'order_id' => $orderId,
+                'order_id' => $orderId, // Gunakan orderId yang sudah didefinisikan
+                'jumlah_tiket' => $jumlahTiket,
+                'kategori' => $kategori,
                 'total_pembayaran' => $totalPembayaran,
                 'status' => 'pending'
             ]);
 
-            return response()->json(['redirect_url' => $snapToken->redirect_url]);
+            return response()->json([
+                'snap_token' => $snapToken,
+                'redirect_url' => "https://app.sandbox.midtrans.com/snap/v2/vtweb/" . $snapToken
+            ]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
