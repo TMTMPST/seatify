@@ -62,6 +62,41 @@ class BuyController extends Controller
         }
     }
 
+    public function hitungTotal(Request $request)
+    {
+        try {
+            $hargaTiket = [
+                'vip' => 500000,
+                'reguler' => 200000
+            ];
+
+            $jumlah = $request->input('jumlahTiket');
+            $kategori = $request->input('kategoriTiket');
+            $kodePromo = $request->input('kodePromo');
+
+            if (!isset($hargaTiket[$kategori])) {
+                return $this->corsResponse(['error' => 'Kategori tiket tidak valid'], 400);
+            }
+
+            $total = $jumlah * $hargaTiket[$kategori];
+
+            // Cek diskon jika ada kode promo
+            $diskon = "-";
+            if ($kodePromo === "DISKON50") {
+                $diskon = "50%";
+                $total *= 0.5;
+            }
+
+            return $this->corsResponse([
+                'total' => number_format($total, 0, ',', '.'),
+                'diskon' => $diskon
+            ]);
+        } catch (\Exception $e) {
+            return $this->corsResponse(['error' => $e->getMessage()], 500);
+        }
+    }
+
+
     public function handleNotification(Request $request)
     {
         $serverKey = env('MIDTRANS_SERVER_KEY');

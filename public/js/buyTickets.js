@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
     
+        if (jumlah === 0) {
+            totalPembayaran.innerHTML = `<p class="text-lg font-semibold text-red-600">Pilih jumlah tiket terlebih dahulu!</p>`;
+            return;
+        }
+    
         fetch("/pembelian/hitung-total", {
             method: "POST",
             headers: {
@@ -45,13 +50,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(response => response.json())
         .then(data => {
-            totalPembayaran.innerHTML = `
-                <p class="text-lg font-semibold">Total: ${data.total}</p>
-                ${data.diskon !== "-" ? `<p class="text-sm text-green-600">Diskon: ${data.diskon}</p>` : ""}
-            `;
+            console.log("Response dari server:", data); // Debugging
+            
+            if (data.total) {
+                totalPembayaran.innerHTML = `
+                    <p class="text-lg font-semibold">Total: Rp${data.total.toLocaleString()}</p>
+                    ${data.diskon && data.diskon !== "-" ? `<p class="text-sm text-green-600">Diskon: Rp${data.diskon.toLocaleString()}</p>` : ""}
+                `;
+            } else {
+                totalPembayaran.innerHTML = `<p class="text-lg font-semibold text-red-600">Gagal menghitung total!</p>`;
+            }
         })
-        .catch(error => console.error("Error:", error));
-    };    
+        .catch(error => {
+            console.error("Error:", error);
+            totalPembayaran.innerHTML = `<p class="text-lg font-semibold text-red-600">Terjadi kesalahan, coba lagi.</p>`;
+        });
+    };         
 
     jumlahTiket.addEventListener("change", updateTotalPembayaran);
     kategoriTiket.addEventListener("change", updateTotalPembayaran);
