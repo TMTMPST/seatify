@@ -6,7 +6,7 @@
     <hr class="h-px my-8 bg-gray-300 border-0">
 
     <a href="/admin/konser/tambah-konser">
-        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-green-700 rounded-xl hover:bg-green-800 focus:ring-4 focus:ring-gray-300 cursor-pointer">
+        <button type="button" class="px-5 py-3 mb-4 text-sm font-medium text-white bg-blue-700 rounded-xl hover:bg-blue-800 focus:ring-4 focus:ring-gray-300 cursor-pointer">
             Tambah Konser
         </button>
     </a>
@@ -31,7 +31,7 @@
                         <td class="px-6 py-4">{{ Str::limit($item->deskripsi, 50) }}</td>
                         <td class="px-6 py-4">
                             <span class="px-3 py-1 text-xs font-semibold rounded-lg
-                                {{ $item->ketersediaan_tiket ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' }}">
+                                {{ $item->ketersediaan_tiket ? 'bg-blue-100 text-blue-700' : 'bg-red-100 text-red-700' }}">
                                 {{ $item->ketersediaan_tiket ? 'Tersedia' : 'Tidak Tersedia' }}
                             </span>
                         </td>

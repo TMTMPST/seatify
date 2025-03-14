@@ -28,8 +28,8 @@
                         <option value="reguler" selected>Reguler</option>
                     </select>
                 </div>                
-                <div id="benefitVIP" class="col-span-2 p-3 bg-green-100 border border-green-300 rounded-xl border-dashed hidden">
-                    <p class="text-lg font-semibold text-green-900">✨ Benefit VIP ✨</p>
+                <div id="benefitVIP" class="col-span-2 p-3 bg-blue-100 border border-blue-300 rounded-xl border-dashed hidden">
+                    <p class="text-lg font-semibold text-blue-900">✨ Benefit VIP ✨</p>
                     <div class="flex flex-col text-sm font-medium mt-2">
                         <div>Dapat makan & minum gratis 🍔🥤</div>
                         <div>Masuk konser lebih cepat 🚀</div>
@@ -38,11 +38,11 @@
                 </div>
                 <div class="col-span-2">
                     <label for="kodePromo" class="block mb-2 text-sm font-medium text-gray-900">Kode promo</label>
-                    <input type="text" id="kodePromo" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-green-500 focus:border-green-500 block w-full p-3" placeholder="Masukkan kode promo" />
+                    <input type="text" id="kodePromo" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full p-3" placeholder="Masukkan kode promo" />
                 </div>
                 <div class="col-span-2" id="totalPembayaran"></div>
             </div>
-            <button type="submit" class="w-full bg-green-700 hover:bg-green-800 cursor-pointer text-white p-2.5 rounded-xl font-medium">
+            <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 cursor-pointer text-white p-2.5 rounded-xl font-medium">
                 Beli Tiket
             </button>
         </form>

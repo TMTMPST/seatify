@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data.total) {
                 totalPembayaran.innerHTML = `
                     <p class="text-lg font-semibold">Total: Rp${data.total.toLocaleString()}</p>
-                    ${data.diskon && data.diskon !== "-" ? `<p class="text-sm text-green-600">Diskon: Rp${data.diskon.toLocaleString()}</p>` : ""}
+                    ${data.diskon && data.diskon !== "-" ? `<p class="text-sm text-blue-600">Diskon: Rp${data.diskon.toLocaleString()}</p>` : ""}
                 `;
             } else {
                 totalPembayaran.innerHTML = `<p class="text-lg font-semibold text-red-600">Gagal menghitung total!</p>`;

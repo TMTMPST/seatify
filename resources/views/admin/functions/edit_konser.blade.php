@@ -3,7 +3,7 @@
 @section('admin')
     <div class="bg-gray-100 p-5 rounded-xl">
         @if(session('success'))
-            <div class="bg-green-500 text-white p-3 rounded-lg mb-3">
+            <div class="bg-blue-500 text-white p-3 rounded-lg mb-3">
                 {{ session('success') }}
             </div>
         @endif

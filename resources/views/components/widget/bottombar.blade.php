@@ -12,7 +12,7 @@
         </div>
         <hr class="border-gray-200">
         <div class="flex items-center justify-center">
-            <a href="/detail-konser/1/tiket" class="py-3 text-base font-medium text-center text-white bg-green-700 cursor-pointer rounded-xl hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 w-full">
+            <a href="/detail-konser/1/tiket" class="py-3 text-base font-medium text-center text-white bg-blue-700 cursor-pointer rounded-xl hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-full">
                 <button type="button" class="">
                     Beli Tiket
                 </button>
