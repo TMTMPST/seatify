@@ -64,29 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
         const kategori = kategoriTiket.value;
         const promo = kodePromo.value.trim();
     
-        fetch('/pembelian/buat-pesanan', {
+        fetch("/pembelian/buat-pesanan", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
             body: JSON.stringify({
-                tiket_id: 1,
-                jumlah: 2
+                jumlahTiket: jumlah,
+                kategoriTiket: kategori,
+                konser_id: 1
             })
-        })        
+        })
         .then(response => response.json())
         .then(data => {
-            if (data.redirect_url) {
-                // Buka URL pembayaran Midtrans di tab baru
-                window.open(data.redirect_url, "_blank");
+            if (data.snap_token) {
+                window.location.href = `https://app.sandbox.midtrans.com/snap/v2/vtweb/${data.snap_token}`;
             } else {
-                successModal.classList.remove("hidden"); // Tampilkan modal sukses
+                console.error("Snap token tidak ditemukan.");
             }
         })
-        .catch(error => {
-            console.error("Error:", error);
-        });
+        .catch(error => console.error("Error:", error));        
     });
 
     closeSuccessModal.addEventListener("click", () => {
