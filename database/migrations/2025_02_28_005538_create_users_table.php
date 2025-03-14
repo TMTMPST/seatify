@@ -7,11 +7,14 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up() {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->id(); // bigint UNSIGNED NOT NULL (auto-increments)
+            $table->string('email')->unique()->collation('utf8mb4_unicode_ci'); 
+            $table->string('password')->collation('utf8mb4_unicode_ci');
             $table->tinyInteger('level')->default(1);
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->string('google_id')->nullable(); 
+            
         });
     }
 
