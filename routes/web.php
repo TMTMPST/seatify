@@ -39,6 +39,8 @@ Route::get('/detail-konser/{id}/tiket', fn($id) => view('tiket_konser', ['konser
 Route::post('/pembelian/hitung-total', [BuyController::class, 'hitungTotal']);
 Route::post('/pembelian/buat-pesanan', [BuyController::class, 'buatPesanan']);
 Route::post('/pembelian/midtrans/notification', [BuyController::class, 'handleNotification']);
+Route::post('/midtrans/callback', [BuyController::class, 'handleMidtransCallback']);
+
 
 // Band
 Route::get('/band', [BandController::class, 'index']);

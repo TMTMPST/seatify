@@ -6,6 +6,7 @@ use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use Midtrans\Snap;
 use Midtrans\Config;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 
 class BuyController extends Controller
@@ -36,12 +37,24 @@ class BuyController extends Controller
                 'konser_id' => 'required|integer',
             ]);
 
+            // Atur harga berdasarkan kategori tiket
+            $hargaPerTiket = $request->kategoriTiket === 'vip' ? 200000 : 100000;
+            $totalHarga = $hargaPerTiket * $request->jumlahTiket;
+
+            // Cek apakah ada kode promo dan hitung diskon jika berlaku
+            if (!empty($request->kodePromo)) {
+                $diskon = 50000; // Misal: diskon Rp50.000 jika ada kode promo valid
+                $totalHarga = max(0, $totalHarga - $diskon);
+            }
+
+            // Buat order ID unik
             $orderId = uniqid();
 
+            // Buat transaksi untuk Midtrans
             $transaction = [
                 'transaction_details' => [
                     'order_id' => $orderId,
-                    'gross_amount' => 100000, // Sesuaikan harga tiket
+                    'gross_amount' => $totalHarga, // Total harga sesuai perhitungan
                 ],
                 'customer_details' => [
                     'first_name' => 'Nama',
@@ -50,6 +63,7 @@ class BuyController extends Controller
                 ]
             ];
 
+            // Dapatkan Snap Token dari Midtrans
             $snapToken = Snap::getSnapToken($transaction);
 
             return $this->corsResponse([
@@ -59,6 +73,24 @@ class BuyController extends Controller
             ]);
         } catch (\Exception $e) {
             return $this->corsResponse(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function handleMidtransCallback(Request $request)
+    {
+        try {
+            $orderId = $request->query('order_id');
+
+            // Ambil status transaksi dari Midtrans
+            $serverKey = config('midtrans.server_key');
+            $url = "https://api.sandbox.midtrans.com/v2/{$orderId}/status";
+
+            $response = Http::withBasicAuth($serverKey, '')->get($url);
+            $status = $response->json()['transaction_status'] ?? 'pending';
+
+            return response()->json(['order_id' => $orderId, 'status' => $status]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
